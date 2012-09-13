@@ -1,0 +1,1 @@
+<h1><?php echo $this->lang->line('txt_home'); ?></h1>

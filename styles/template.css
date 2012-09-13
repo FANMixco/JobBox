@@ -1,0 +1,47 @@
+/* CSS Document */
+*{margin:0;padding:0px;}
+ol,ul{list-style:none;}
+img{border:0;}
+h1,h2,h3,h4,h5,h6,
+p,a,li,label,span
+{text-rendering:optimizelegibility; text-align: justify;}
+
+/* General Selectors */
+h1{color:#950000; text-align:right;}
+
+/* Template Structure */
+div#header{
+	width:100%;
+	height:150px;
+	background-color:black;
+	margin-bottom:10px;
+	color:white;
+}
+div#content{
+	background-color:white;
+	position:relative;
+	/* Box-Model */
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:-40px;	
+	padding:5px 10px;
+	color:black;			
+	width:75%;
+	/*Border-radius*/
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	/* Box Shadow */
+	-webkit-box-shadow: 0px 3px 11px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 3px 11px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.75);
+}
+div#footer{
+	background-color:black;	
+	margin-top:-40px;
+}
+
+/* IDs */
+img#logo-siman,img#logo{max-height:125px;max-width:125px;}
+img#logo-siman{margin:10px 0 0 10px;}
+img#logo{float:right;}

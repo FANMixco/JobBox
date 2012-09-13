@@ -1,0 +1,29 @@
+					  				  
+/*
+	UTILITY STYLES
+*/				  				  
+					  				  
+.floatLeft 									{ float: left; margin-right: 10px;}
+.floatRight									{ float: right; }
+
+/*
+	SLIDER
+*/
+.slider-wrap								{ width:364px; float:right; height:205px; background:#CCC;}
+.stripViewer .panelContainer 
+.panel ul									{ text-align: left; margin: 0 15px 0 30px; }
+.stripViewer								{ position: relative; overflow: hidden; width: 364px; height: 205px; }
+.stripViewer .panelContainer				{ position: relative; left: 0; top: 0; }
+.stripViewer .panelContainer .panel			{ float: left; height: 100%; position: relative; width: 364px; }
+.stripNavL, .stripNavR, .stripNav			{ display: none; }
+#movers-row									{ background-color:#737473; display:block; width:100%; height:55px; overflow: hidden;}
+.photo-meta-data							{ background: url(images/transpBlack.png); padding: 10px; height: 30px; 
+											  margin-top: -50px; position: relative; z-index: 9999; color: white; }
+.photo-meta-data span 						{ font-size: 13px; }
+#movers-row	.mover							{ background-color:#737473; margin:2px 1px; float:left;}
+#movers-row	.mover:hover					{ background-color: #B5B5B5;}
+#movers-row	.mover,#movers-row	.mover a	{ display:inline-block; width:88px; height:49px; text-align:center; line-height:49px;}
+#movers-row	a img 							{ max-width:88px; max-height:49px;vertical-align:middle;}
+.active-thumb 								{ background: transparent url(images/icon-uparrowsmallwhite.png) top center no-repeat; }
+.wrapper									{ display:block; text-align:center; line-height:205px;}
+.wrapper img 								{ vertical-align:middle; max-width:364px; max-height:205px;}
