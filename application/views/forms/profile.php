@@ -75,12 +75,7 @@
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_weight')); ?></td>
 				<td><?php echo $user['Weight'].$user['W_Unit_Type'];?></td>
-			</tr>
-			<tr>
-				<td colspan="5">
-					<?php echo form_submit(array('name'=>'register','value' => $this->lang->line('txt_send'),'class' =>'btn','style'=> 'margin-top:15px;'));?>
-				</td>
-			</tr>
+			</tr>			
 		</table>
 	</div>
 	<div id="tabs-2">

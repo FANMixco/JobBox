@@ -94,6 +94,87 @@ class Job extends CI_Controller {
 		redirect('job/view/'.$job);
 	}
 	
+	/*--------------------------------------------------------------------------*/
+	/*  addTo ==> Adds an user to a selection process							*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	function addTo(){
+		$application = array(
+			idUser 		=> decodeID($this->input->post('user')),
+			'idJob'		=> $this->input->post('job'),
+			'App_Date'	=> date('Y-m-d H:i')
+		);
+		if (!$this->jobModel->hasApplied(decodeID($this->input->post('user')),$this->input->post('job')))$this->jobModel->apply($application);
+		redirect('user/profile/'.$this->input->post('user'));
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  applications ==> gets a list of the applications for all jobs			*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	public function applications()
+	{		
+		if ($this->session->userdata('Credentials')!=Credentials || $this->session->userdata(Level)!=1) redirect('logout');
+		//Get all the jobs & the total of applications for each job		
+		$data = array(
+			'title' 	=> $this->lang->line('txt_apps'),
+			'mainView'	=> 'forms/applications/apps',
+			'scripts'	=> jlist(),
+			'apps'		=> $this->jobModel->getJobApps()
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  viewApps ==> Displays a list of applications for a job					*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	public function viewApps($job)
+	{		
+		if ($this->session->userdata('Credentials')!=Credentials || $this->session->userdata(Level)!=1) redirect('logout');
+		$idJob = decodeID($job);
+		$job = $this->jobModel->getJob($idJob);
+		$data = array(
+			'title' 	=> $job['Position_Name'],
+			'mainView'	=> 'forms/applications/app',
+			'scripts'	=> jlist(),
+			'apps'		=> $this->jobModel->getApps($idJob)
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  viewApp ==> Displays a single application								*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	public function viewApp($job,$user)
+	{		
+		if ($this->session->userdata('Credentials')!=Credentials || $this->session->userdata(Level)!=1) redirect('logout');
+		if ($this->input->post()):
+			//load the validation library
+			$this->load->library('form_validation');			
+			$this->form_validation->set_rules('contact',$this->lang->line('txt_contact'),'required');			
+			if ($this->form_validation->run()):
+				$data = array(
+					status 		=> 2, //Application approved,
+					'Recruiter'	=> $this->session->userdata(idUser),
+					'Reason'	=> $this->input->post('reason'),
+					'Origin'	=> $this->input->post('origin'),
+					'Contact'	=> $this->input->post('contact'),
+					'Chosen'	=> $this->input->post('chosen')
+				);				
+				$this->jobModel->updateApp(decodeID($job),decodeID($user),$data);
+			endif;			
+		endif;
+		$data = array(
+			'title' 	=> $this->lang->line('txt_apps'),
+			'mainView'	=> 'forms/applications/approve',
+			'scripts'	=> jlist(),
+			'app'		=> $this->jobModel->getApp(decodeID($job),decodeID($user))
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	
 	/*--------------------------------------------------------------------------**
 	**  _set_job ==> Sets a job info							 				**
 	**	$job : ID of the job to update. If NULL, the info will be inserted		**

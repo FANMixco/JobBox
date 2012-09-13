@@ -154,7 +154,7 @@ function writeSingleImage($class,$data,$index,$IDIndex,$attributes=array('',''))
 /* $divName		- The ID of the div that contains the records					*/
 /*																				*/
 /* --------------------------------------------------------------------------	*/
-function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$linkData,$divName='records'){
+function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$linkData,$divName='records',$users=false){
 	$ci =& get_instance();
 	/*Initialize the vars*/
 	$table = '';
@@ -207,8 +207,9 @@ function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$lin
 			endif;			
 			//Get the link
 			$link = anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$ci->lang->line('txt_view').' [+]');
-			$tableData .= '<td><h2 class="name">'.anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$record[$indexes[1]]).'</h2>
-				<p>'.truncate($record[$indexes[2]],210).'</p>'.$link.'</td>';  //Add the info
+			$tableData .= ($users==false)? '<td><h2 class="name">'.anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$record[$indexes[1]]).'</h2>
+				<p>'.truncate($record[$indexes[2]],210).'</p>'.$link.'</td>':
+				'<td><h2 class="name">'.anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$record[$indexes[1]].' '.$record[$indexes[2]]).'</h2><p>'.truncate($record[$indexes[3]],210).'</p>'.$link.'</td>';  //Add the info;  //Add the info
 			
 			$tableData .= '</tr>'; //Close the row
 		endforeach;
@@ -344,11 +345,12 @@ function printTable($searchText,$headers,$data,$indexes,$linkData = NULL,$divNam
 						endif;
 					endforeach;
 				else:
-					//Just write the fields					
-					foreach($custom['fields'] as $field):
-						$keyField = ($field[3]!=NULL)?$field[3]:'';
-						$tableData .= '<td><a class="'.$field[0].'" href="'.base_url($field[2].encodeID($record[$keyField])).'">'.$field[1].'</a></td>';
-					endforeach;
+					//Just write the fields				
+					//foreach($custom['fields'] as $field):						
+						$fields = $custom['fields'];
+						$keyField = ($fields[3]!=NULL)?$fields[3]:'';
+						$tableData .= '<td><a class="'.$fields[0].'" href="'.base_url($fields[2].encodeID($record[$keyField])).'">'.$fields[1].'</a></td>';
+					//endforeach;
 				endif;
 			endif; 			
 			$tableData .= '</tr>';
@@ -368,7 +370,7 @@ function printTable($searchText,$headers,$data,$indexes,$linkData = NULL,$divNam
 			  		<div id="search-container">
   					<table>
   					<tr><td class="searcher_admin">
-						<label>Buscar lugares:</label>
+						<label>'.$searchText.'</label>
 						<input class="search" id="searcher1" type="text" placeholder="'.$ci->lang->line('txt_search').'">
 					</td>
 					</tr>

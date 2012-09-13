@@ -60,6 +60,30 @@ class User extends CI_Controller {
 		$this->load->view('template/wrapper',$data);
 	}
 	
+	public function profiles(){
+		$this->load->helper('js');
+		$data = array(
+			'title'		=> $this->lang->line('txt_profiles'),
+			'mainView'	=> 'forms/profiles',
+			'scripts'	=>  jlist(),
+			'users'		=> $this->userModel->getUsers()
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	
+	public function profile($profile){
+		$this->load->helper('js');
+		$this->load->model('jobModel');
+		$data = array(
+			'title'		=>	$this->lang->line('txt_my_profile'),
+			'mainView'	=> 	'forms/profile',
+			'scripts'	=>  jQuery_UI(),
+			'user'		=>  $this->userModel->getUser(decodeID($profile)),
+			'jobs'		=> 	getDropDown($this->jobModel->getRecentJobs(),'idJob','Position_Name')
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+	
 	/*--------------------------------------------------------------------------**
 	**  _set_user ==> Sets an user's basic information			 				**
 	**	$user : ID of the user to update. If NULL, the info will be inserted	**

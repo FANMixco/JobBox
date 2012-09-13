@@ -48,9 +48,13 @@ $route['404_override'] = '';
 |
 */
 
-$route['login'] = 'jobbox/login';
-$route['admin'] = 'jobbox/admin';
-$route['logout'] = 'jobbox/logout';
+$route['login'] 		= 'jobbox/login';
+$route['admin'] 		= 'jobbox/admin';
+$route['logout'] 		= 'jobbox/logout';
+$route['applications/view/(:any)']	= "job/viewApps/$1";
+$route['applications/check/(:any)']	= "job/viewApp/$1";
+
+$route['profiles']		= "user/profiles";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

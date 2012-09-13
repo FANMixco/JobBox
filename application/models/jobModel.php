@@ -19,6 +19,57 @@ class JobModel extends CI_Model{
 	}
 	
 	/*--------------------------------------------------------------------------**
+	**  getJobApps ==> gets the total apps for each job							**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getJobApps(){
+		$sql = "Select a.idJob, COUNT(a.idJob) total_applications,
+			j.Position_Name 
+			From jobs j, applications a
+			Where NOW() Between j.Start_Date AND j.End_Date
+			And a.idJob = j.idJob
+			Group By a.idJob";
+		return $this->db->query($sql)->result_array();
+	}
+	
+	/*--------------------------------------------------------------------------**
+	**  getJobApps ==> gets the applications for a job							**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getApps($job){
+		$sql = "SELECT a.idUser, a.idJob,
+		DATE_FORMAT(App_Date, '%d/%m/%Y') App_Date,		
+		CONCAT(First_Name,' ',Last_Name_1) Name
+		FROM applications a, users
+		Where a.idUser = users.idUser 
+		AND idJob=?";
+		$params = array($job);
+		return $this->db->query($sql,$params)->result_array();
+	}
+	
+	/*--------------------------------------------------------------------------**
+	**  getApp ==> gets a single application									**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getApp($job,$user){
+		$sql = "Select a.*, CONCAT(u.First_Name,' ',u.Last_Name_1) Name,
+		Position_Name		
+		FROM applications a, users u, jobs j
+		WHERE u.idUser = a.idUser
+		and j.idJob = a.idJob
+		AND a.idJob=?
+		AND a.idUser=?";
+		$params = array($job,$user);
+		return $this->db->query($sql,$params)->row_array();
+	}
+	
+	/*--------------------------------------------------------------------------**
 	**  getRecentJobs ==> gets all the jobs ordered by most recent				**
 	**																			**
 	**	RETURNS: Result array													**
@@ -56,6 +107,17 @@ class JobModel extends CI_Model{
 	
 	function hasApplied($user,$job){
 		return $this->db->get_where('applications',array(idUser => $user,'idJob'=> $job))->num_rows();
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  updateApp ==> Updates an app 	 										*/
+	/*  $data : Array containing the info of the job							*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	function updateApp($job,$user,$data){
+		$this->db->where(array('idJob'	=> $job,idUser => $user));
+		$this->db->update('applications',$data);
+		return $this->db->affected_rows();
 	}
 	
 	/*--------------------------------------------------------------------------*/

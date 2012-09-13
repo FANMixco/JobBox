@@ -16,7 +16,8 @@ $lang['txt_home']	              = "Bienvenido a JobBox!"; //System Name
 $lang['menu_job_bag']	          = "Bolsa de Trabajo";
 $lang['menu_register']            = "Registrese";
 $lang['menu_search_job']          = "Buscar Empleo";
-
+$lang['menu_apps']		          = "Aplicaciones";
+$lang['menu_profiles']	          = "Ver Perfiles";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* TEMPLATE 						 																						*/
@@ -40,15 +41,21 @@ $lang['txt_search']               = "Buscar";
 $lang['txt_go_back']              = "&laquo; Regresar";
 $lang['txt_apply']             	  = "Aplicar";
 $lang['txt_edit']             	  = "Editar";
+$lang['txt_view']             	  = "Ver";
 
 //Admin
 $lang['txt_admin_jobs']           = "Administrar Bolsa de Trabajo";
+
+//profiles
+$lang['txt_add_job_profile']      = "A&ntilde;adir a un proceso de selecci&oacute;n";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* TEXTS 						 																							*/
 /* Texts used in the app 			 																						*/
 /*																															*/
 /*--------------------------------------------------------------------------------------------------------------------------*/
+$lang['txt_actions']        	  = "Acciones";
+$lang['txt_profiles']        	  = "Perfiles";
 
 //Users
 $lang['lbl_completed_years']             	  = "Num. de A&ntilde;os completados:";
@@ -78,7 +85,14 @@ $lang['txt_job_history']	      = "Experiencia Profesional";
 $lang['txt_new_job']	      	  = "Nueva Plaza de Trabajo";
 $lang['txt_job_desc']	      	  = "Descripci&oacute;n del Trabajo";
 $lang['txt_job_reqs']	      	  = "Requerimientos del Trabajo";
+
+//Applications
 $lang['txt_app_sent']	      	  = "Aplicaci&oacute;n Enviada";
+$lang['txt_apps']		      	  = "Aplicaciones";
+$lang['txt_temp']		          = "Temporal";
+$lang['txt_perm']		          = "Permanente";
+$lang['txt_bag']		          = "Bolsa";
+$lang['txt_other']		          = "Otros";
 
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -121,6 +135,7 @@ $lang['lbl_hobbies']       		  = "Pasatiempos:";
 $lang['lbl_others']       		  = "Otras denominaciones:";
 $lang['lbl_start_date']       	  = "Fecha de Inicio:";
 $lang['lbl_end_date']       	  = "Fecha de Fin:";
+$lang['lbl_app_date']       	  = "Fecha de Aplicaci&oacute;n:";
 $lang['lbl_school']       		  = "Centro Educativo:";
 $lang['lbl_level']       		  = "Nivel:";
 $lang['lbl_conversation_level']       		  = "Nivel de Conversaci&oacute;n:";
@@ -135,6 +150,7 @@ $lang['lbl_zip_code']       		  = "C&oacute;digo Postal:";
 $lang['lbl_address']       		  = "Direcci&oacute;n:";
 $lang['lbl_applicant_status']     = "Estatus de Aplicaci&oacute;n:";
 $lang['lbl_applicant_type']       = "Tipo de Aplicaci&oacute;n:";
+$lang['lbl_applicant']		      = "Aplicante:";
 $lang['lbl_origin']       		  = "Origen:";
 $lang['lbl_recruiter']       	  = "Reclutador:";
 $lang['lbl_selection_source']     = "Fuente de Selecci&oacute;n:";
@@ -170,6 +186,7 @@ $lang['lbl_employee_number']      = "Num&uacute;ero de Empleados:";
 $lang['lbl_start_position']       = "Puesto inicial:";
 $lang['lbl_end_position']         = "Puesto final:";
 $lang['lbl_activities']       	  = "Actividades:";
+$lang['lbl_applied_job']       	  = "Plaza a la que aplica:";
 $lang['lbl_boss']       		  = "Jefe Inmediato:";
 $lang['lbl_boss_position']        = "Cargo del Jefe:";
 $lang['lbl_reason']       		  = "Raz&oacute;n:";
@@ -215,7 +232,15 @@ $lang['lbl_user_levels']       	  = "Niveles de Usuarios:";
 /*--------------------------------------------------------------------------------------------------------------------------*/
 $lang['msg_congrats']             = "Felicidades!";
 $lang['msg_no_jobs']              = "No existe ninguna plaza de trabajo.";
+$lang['msg_no_profiles']          = "No existe ning&uacute;n perfil.";
 $lang['msg_register']             = "Registrese en JobBox y podr&aacute; aplicar a todas las plazas del sistema, participar en procesos de selecci&oacute;n, subir su perfil y darse a conocer en el medio profesional.";
 $lang['msg_registered']           = "Felicidades! Su cuenta ha sido creada y est&aacute; lista para usarse. Recuerde actualizar su perfil una vez ingrese al sistema.";
 
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/* HEADERS	 						 																						*/
+/* Headers of the tables																									*/
+/*																															*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+$lang['header_apps']       	  	  = array('Plaza','# de Aplicaciones');
+$lang['header_app']       	  	  = array('Aplicante','Fecha de Aplicaci&oacute;n');
 ?>

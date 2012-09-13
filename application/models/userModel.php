@@ -21,6 +21,15 @@ class UserModel extends CI_Model{
 	function getUser($user){
 		return $this->db->get_where('user_vw',array(idUser => $user,status => 1))->row_array();
 	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  getUsers ==> gets the info of a specific user 							*/
+	/*  $user : user's ID 														*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	function getUsers(){
+		return $this->db->get_where('user_vw',array(status => 1,Level => 2))->result_array();
+	}
 
 	/*--------------------------------------------------------------------------*/
 	/*  login ==> Initializes an user session	 	 							*/
