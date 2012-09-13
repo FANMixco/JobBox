@@ -1,4 +1,4 @@
-/* CSS Document */
+﻿/* CSS Document */
 *{margin:0;padding:0px;}
 ol,ul{list-style:none;}
 img{border:0;}
@@ -45,3 +45,94 @@ div#footer{
 img#logo-siman,img#logo{max-height:125px;max-width:125px;}
 img#logo-siman{margin:10px 0 0 10px;}
 img#logo{float:right;}
+
+/*Navigation menu*/
+ul#nav li{
+    list-style:none;
+/* Fondo Degradado */
+
+    /* CSS3 */
+
+    background: linear-gradient(left, #BDBDBD, #1C1C1C);
+
+    /* Safari 4+ y Chrome 1+ */
+
+    background-image:-webkit-gradient(left, color-stop(0, #BDBDBD), color-stop(1, #1C1C1C));
+
+    /* Safari 5.1+ y Chrome 10+ */
+
+    background-image:-webkit-linear-gradient(left, #BDBDBD, #1C1C1C);
+
+    /* Firefox 3.6+ */
+
+    background-image:-moz-linear-gradient(left, #BDBDBD, #1C1C1C);
+
+    /* Opera 11.10+ */
+
+    background-image:-o-linear-gradient(left, #BDBDBD, #1C1C1C);
+
+    /* Internet Explorer 5.5+ - 9 */
+
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#BDBDBD', EndColorStr='#1C1C1C',GradientType=1);
+
+    /* Internet Explorer 10+ */
+
+    background: -ms-linear-gradient(left, #BDBDBD, #1C1C1C);
+
+    /* Color alternativo para versiones que no soporten degradados */
+
+    background-color: #BDBDBD;
+    background-repeat:repeat-y;
+}
+
+ul#nav li a{
+    display:block;
+    padding:3px 7px;
+    text-decoration:none;    
+}
+
+ul#nav li, ul#nav li a{        
+    color:White;
+    font-weight:bold;
+    font-family:Palatino Linotype;
+    font-size:small;
+}
+
+ul#nav li a:hover{
+/* Fondo Degradado */
+
+    /* CSS3 */
+
+    background: linear-gradient(left, #610B0B, #8A0808);
+
+    /* Safari 4+ y Chrome 1+ */
+
+    background-image:-webkit-gradient(left, color-stop(0, #610B0B), color-stop(1, #8A0808));
+
+    /* Safari 5.1+ y Chrome 10+ */
+
+    background-image:-webkit-linear-gradient(left, #610B0B, #8A0808);
+
+    /* Firefox 3.6+ */
+
+    background-image:-moz-linear-gradient(left, #610B0B, #8A0808);
+
+    /* Opera 11.10+ */
+
+    background-image:-o-linear-gradient(left, #610B0B, #8A0808);
+
+    /* Internet Explorer 5.5+ - 9 */
+
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#610B0B', EndColorStr='#8A0808',GradientType=1);
+
+    /* Internet Explorer 10+ */
+
+    background: -ms-linear-gradient(left, #610B0B, #8A0808);
+
+    /* Color alternativo para versiones que no soporten degradados */
+
+    background-color: #8A0808;
+
+    background-repeat:repeat-y;
+    color:white;
+}
