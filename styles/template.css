@@ -1,6 +1,5 @@
 /* CSS Document */
 *{margin:0;padding:0px;}
-/*body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}*/
 ol,ul{list-style:none;}
 img{border:0;}
 h1,h2,h3,h4,h5,h6,
@@ -9,6 +8,7 @@ p,a,li,label,span
 
 /* General Selectors */
 h1{color:#950000; text-align:right;}
+h2{color: #003f85;}
 a{
 	text-decoration:none;
 	/* Transitions */
@@ -74,12 +74,15 @@ div#content{
 	background-color:white;
 	min-height:100px;
 	position:relative;
+	/* Font */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:12px; 
+	color:#6e6d6d;
 	/* Box-Model */
 	margin-right:auto;
 	margin-left:auto;
 	margin-top:-40px;	
-	padding:5px 10px;
-	color:black;			
+	padding:5px 10px;			
 	width:75%;
 	/*Border-radius*/
 	-webkit-border-radius:4px;

@@ -57,5 +57,21 @@ define('Credentials','J0BboXx');
 */
 define('users','users');
 
+/*
+|--------------------------------------------------------------------------
+| FIELD NAMES
+|--------------------------------------------------------------------------
+|
+| The names of the fields of the tables
+|
+*/
+
+//General
+define('desc','Description');
+
+//Jobs-View
+define('idJob','idJob');
+define('jobName','Position_Name');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

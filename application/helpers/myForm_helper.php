@@ -138,6 +138,9 @@ function writeSingleImage($class,$data,$index,$IDIndex,$attributes=array('',''))
 /* printList - Displays a table in list-format				 			 		*/
 /*																				*/
 /* $searchText 	- String that will be shown in the search option				*/
+/* $directory 	- The directory where the function will search the image		*/
+/*					If this var is NULL, the function won't display any image.	*/
+/* $noRecordsMsg- Message to display when there are no records					*/
 /* $data 		- Result array containing the data to print						*/
 /* $indexes 	- Array containing all the indexes that are gonna be printed.	*/
 /*					The function assumes:										*/
@@ -148,9 +151,10 @@ function writeSingleImage($class,$data,$index,$IDIndex,$attributes=array('',''))
 /*				The values are threatened as follows: 							*/
 /*				[0]. It will be url to write 					 				*/
 /*				[1]. key Index of the element. If null, don't write it			*/
+/* $divName		- The ID of the div that contains the records					*/
 /*																				*/
 /* --------------------------------------------------------------------------	*/
-function printList($searchText,$directory,$noRecordsMsg,$data,$indexes,$linkData,$divName='records'){
+function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$linkData,$divName='records'){
 	$ci =& get_instance();
 	/*Initialize the vars*/
 	$table = '';
@@ -184,28 +188,29 @@ function printList($searchText,$directory,$noRecordsMsg,$data,$indexes,$linkData
         ';		
 		/**********************Table-data****************************/
 		foreach ($data as $record):
-			//Get the first image of the directory
-			$dir="files/".$directory."/thumbs/".$record[$indexes[0]].'/';
-			if (is_dir($dir)):
-				if ($dh = opendir($dir)):
-					while (($file = readdir($dh)) !== false) {
-						if ($file !='.' && $file !='..'):
-							$img = base_url($dir.$file);
-							break;
-						endif;
-					}
-					closedir($dh);									
+			$tableData .= '<tr>'; //Open the row
+			if ($directory!=NULL):
+				//Get the first image of the directory
+				$dir="files/".$directory."/thumbs/".$record[$indexes[0]].'/';
+				if (is_dir($dir)):
+					if ($dh = opendir($dir)):
+						while (($file = readdir($dh)) !== false) {
+							if ($file !='.' && $file !='..'):
+								$img = base_url($dir.$file);
+								break;
+							endif;
+						}
+						closedir($dh);									
+					endif;
 				endif;
-			endif;
+				$tableData .= '<td><div class="thumb"><img src="'.$img.'" /></td>'; //Add the image
+			endif;			
 			//Get the link
 			$link = anchor($linkData[0].encodeID($record[$linkData[1]]),$ci->lang->line('txt_view').' [+]');
-			//Form the string
-			$tableData .= '<tr>';			
-			$tableData .= '<td><div class="thumb"><img src="'.$img.'" /></td>';
 			$tableData .= '<td><h3 class="name">'.$record[$indexes[1]].'</h3>
-				<p>'.truncate($record[$indexes[2]],210).'</p>'.$link.'</td>';
+				<p>'.truncate($record[$indexes[2]],210).'</p>'.$link.'</td>';  //Add the info
 			
-			$tableData .= '</tr>';
+			$tableData .= '</tr>'; //Close the row
 		endforeach;
 		/**********************Table-Structure****************************/
 		/*$table .= '<div id="'.$divName.'" class="records">

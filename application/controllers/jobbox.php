@@ -2,16 +2,29 @@
 
 class Jobbox extends CI_Controller {
 
-	
+	/*--------------------------------------------------------------------------*/
+	/*  index ==> HOME! Displays the current jobs ordered by most recent		*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
 	public function index()
 	{
+		$this->load->model('jobModel');
 		$data = array(
 			'title'		=>	$this->lang->line('txt_home'),
-			'mainView'	=> 	'home'
+			'mainView'	=> 	'home',
+			'jobs'		=> 	$this->jobModel->getRecentJobs()
 		);
 		$this->load->view('template/wrapper',$data);
 	}
 	
+	/*--------------------------------------------------------------------------**
+	**  login ==> Initializes an user's session 								**
+	**	$username => Username													**
+	**	$password => User's password											**
+	**																			**
+	** 	NOTE: The params are received with POST									**
+	**																			**
+	**--------------------------------------------------------------------------*/
 	public function login(){		
 		if ($this->input->post()):
 			$this->load->model('userModel');
