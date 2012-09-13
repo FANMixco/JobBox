@@ -29,7 +29,7 @@
 					<tr><td>'.form_label($this->lang->line('lbl_user')).'</td></tr>
 					<tr><td>'.form_input('username').'</td></tr>
 					<tr><td>'.form_label($this->lang->line('lbl_pass')).'</td></tr>
-					<tr><td>'.form_input('password').'</td></tr>
+					<tr><td>'.form_password('password').'</td></tr>
 					<tr><td style="text-align:right;">'.form_submit('login',$this->lang->line('txt_enter')).'</td>
 				</table>';
 				echo form_close();

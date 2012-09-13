@@ -21,7 +21,11 @@
 		<td colspan="2"><br/><?php echo form_submit(array('name' => 'login','value' => $this->lang->line('txt_enter'),'class' => 'submit-btn')); ?></td>
 	</tr>
 </table>
-<?php echo form_close(); ?>
+<?php 
+	/* If there are messages, show them!*/
+    if (isset($error))echo '<h5 class="message message-info medium">'.$this->lang->line('msg_no_login').'</h5><br/><br/>';
+	echo form_close(); 
+?>
 <br/>
 <h5 id="Info" class="message message-info" style="display:none;max-width:370px;"><?php echo $this->lang->line('msg_pass_reseted'); ?></h5>
 <br/>

@@ -20,7 +20,7 @@ class UserModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function login($user,$pass){
-		return $this->db->get_where(users,array(userName => $user,password => $pass, status => 1))->row_array();
+		return $this->db->get_where(users,array(idUser => $user,'password' => $pass, status => 1))->row_array();
 	}
 	
 	/*--------------------------------------------------------------------------*/

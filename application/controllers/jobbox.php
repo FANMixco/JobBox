@@ -36,13 +36,29 @@ class Jobbox extends CI_Controller {
 				$this->session->set_userdata('Credentials',Credentials);
 				//Redirect!
 				redirect('admin');
+			else:
+				$data['error'] = 1;
 			endif;
-		else:
-			$data = array(
-				'title'		=> $this->lang->line('txt_login'),
-				'mainView'	=> 'general/login'				
-			);
-		endif;
+		endif;		
+		$data['title'] 		= $this->lang->line('txt_login');
+		$data['mainView'] 	= 'forms/sign_in';
+		$this->load->view('template/wrapper',$data);
+	}
+	
+	/*--------------------------------------------------------------------------**
+	**  admin ==> Displays the dashboard for each type of user					**
+	**																			**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	public function admin(){
+		if ($this->session->userdata('Credentials')!=Credentials) redirect('logout');
+		switch($this->session->userdata(idLevel)){
+			case 1:
+				break;
+			case 2:
+			default:
+				break;
+		}
 	}
 }
 

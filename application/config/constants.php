@@ -69,6 +69,7 @@ define('users','users');
 //General
 define('status','Status');
 define('desc','Description');
+define('name','Name');
 
 //Jobs-View
 define('idJob','idJob');
@@ -93,6 +94,10 @@ define('state','State');
 //Cities
 define('idCity','idCity');
 define('city','City');
+
+//Users
+define('idUser','idUser');
+define('idLevel','idLevel');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

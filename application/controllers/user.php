@@ -69,7 +69,7 @@ class User extends CI_Controller {
 		$city = ($this->input->post('city')!=0)? $this->input->post('city'): NULL;
 		$data = array(
 			'idUser'		=> $this->input->post('username'),
-			'Password' 		=> $this->input->post('password'),
+			'Password' 		=> md5($this->input->post('password')),
 			'idLevel'		=> 2, //level = 2 ==> Normal User
 			'First_Name'	=> $this->input->post('firstName'),
 			'Middle_Name'	=> $this->input->post('secondName'),
