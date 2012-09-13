@@ -37,6 +37,7 @@ class Jobbox extends CI_Controller {
 				$this->session->set_userdata(name,$user['First_Name'].' '.$user['Last_Name_1']);
 				$this->session->set_userdata('Credentials',Credentials);
 				//Redirect!
+				if ($this->session->userdata('job'))redirect('job/view/'.$job);
 				redirect('admin');
 			else:
 				$data['error'] = 1;

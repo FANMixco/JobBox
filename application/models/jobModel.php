@@ -40,14 +40,22 @@ class JobModel extends CI_Model{
 	
 	/*--------------------------------------------------------------------------**
 	**  apply ==> Creates an user appplication									**
-	**	$user - ID of the user													**
-	**	$job - ID of the job													**
+	**	$data - data of the application											**
 	**																			**
 	**	RETURNS: Result array													**
 	**																			**
 	**--------------------------------------------------------------------------*/
-	function apply($user,$job){
-		return $this->db->get_where('job_areas',array(status => 1))->result_array();
+		/* Application status:
+		1: User Application Sent
+		2: Application Approved
+		3: Selected!*/
+	function apply($data){
+		$this->db->insert('applications',$data);
+		return $this->db->insert_id();
+	}
+	
+	function hasApplied($user,$job){
+		return $this->db->get_where('applications',array(idUser => $user,'idJob'=> $job))->num_rows();
 	}
 	
 	/*--------------------------------------------------------------------------*/

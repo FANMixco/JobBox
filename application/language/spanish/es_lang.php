@@ -75,6 +75,7 @@ $lang['txt_job_history']	      = "Experiencia Profesional";
 $lang['txt_new_job']	      	  = "Nueva Plaza de Trabajo";
 $lang['txt_job_desc']	      	  = "Descripci&oacute;n del Trabajo";
 $lang['txt_job_reqs']	      	  = "Requerimientos del Trabajo";
+$lang['txt_app_sent']	      	  = "Aplicaci&oacute;n Enviada";
 
 
 /*--------------------------------------------------------------------------------------------------------------------------*/

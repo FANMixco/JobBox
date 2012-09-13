@@ -62,7 +62,8 @@ class Job extends CI_Controller {
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	public function view($job)
-	{		
+	{	
+		$this->session->unset_userdata('job');	
 		$job = $this->jobModel->getJob(decodeID($job));
 		if (!empty($job)):
 			$data = array(
@@ -80,8 +81,17 @@ class Job extends CI_Controller {
 	/*--------------------------------------------------------------------------*/
 	public function apply($job)
 	{		
-		if ($this->session->userdata('Credentials')!=Credentials || $this->session->userdata(Level)!=2) redirect('login');
-		
+		if ($this->session->userdata('Credentials')!=Credentials || $this->session->userdata(Level)!=2): 
+			$this->session->set_userdata('job',$job);
+			redirect('login');
+		endif;
+		$application = array(
+			idUser 		=> $this->session->userdata(idUser),
+			'idJob'		=> decodeID($job),
+			'App_Date'	=> date('Y-m-d H:i')
+		);
+		$this->jobModel->apply($application);
+		redirect('job/view/'.$job);
 	}
 	
 	/*--------------------------------------------------------------------------**

@@ -30,7 +30,9 @@
 <a href="javascript:history.go(-1)" class="btn"><?php echo $this->lang->line('txt_go_back'); ?></a>
 <?php 
 	if ($this->session->userdata(Level)!=1):
-		echo anchor('job/apply',$this->lang->line('txt_apply'), array('class' => 'btn right'));
+		echo ($this->jobModel->hasApplied($this->session->userdata(idUser),$job['idJob'])==0)?
+			anchor('job/apply/'.encodeID($job['idJob']),$this->lang->line('txt_apply'), array('class' => 'btn right')): 
+			anchor('javascript:void(0)',$this->lang->line('txt_app_sent'), array('class' => 'btn right'));
 	else:
 		echo anchor('job/edit',$this->lang->line('txt_edit'), array('class' => 'btn right'));
 	endif;
