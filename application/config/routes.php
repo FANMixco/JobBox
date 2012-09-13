@@ -50,6 +50,7 @@ $route['404_override'] = '';
 
 $route['login'] = 'jobbox/login';
 $route['admin'] = 'jobbox/admin';
+$route['logout'] = 'jobbox/logout';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

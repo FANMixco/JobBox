@@ -17,8 +17,8 @@
 	<div>
 		<?php
 			if ($this->session->userdata('Credentials')==Credentials):
-				echo anchor(base_url('user/logout'),$this->lang->line('txt_register'));
-				echo '<a id="login" href="javascript:void(0)">'.$this->lang->line('txt_login').'</a>';
+				echo anchor(base_url('logout'),$this->lang->line('txt_logout'));
+				echo '<a id="login" href="javascript:void(0)">'.$this->session->userdata(name).'</a>';
 			else:
 				echo anchor('user/register',$this->lang->line('txt_register'));
 				echo '<a id="login" href="javascript:void(0)">'.$this->lang->line('txt_login').'</a>';
@@ -61,11 +61,13 @@
 <div id="content">
 <h1><?php echo $title; ?></h1><hr />
 <br />
-<ul id="nav">
-	<li class="title">Tareas Frecuentes</li><hr />
-	<li><a href=<?php echo base_url("user/profile") ?>>Perfil</a></li>
-	<li><a href=<?php echo base_url("user/change_pass") ?>>Cambiar Contrase&ntilde;a</a></li>
-	<li><a href=<?php echo base_url("job/apply") ?>>Aplicar Trabajos</a></li>
+<table border="0" width="100%">
+<tr>
+<td valign="top" width="180px;">
+<ul id="nav">	
+	<li><?php echo anchor(base_url(),$this->lang->line('menu_view_jobs')); ?></li>
+	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_register')); ?></li>
+	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_search_job')); ?></li>
 	<br />
 	<?php 
 		if ($this->session->userdata('level')==1)
@@ -92,3 +94,5 @@
 		}
 	?>
 </ul>
+</td>
+<td valign="top">

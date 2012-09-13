@@ -70,13 +70,14 @@ class User extends CI_Controller {
 		$data = array(
 			'idUser'		=> $this->input->post('username'),
 			'Password' 		=> md5($this->input->post('password')),
+			'eMail' 		=> $this->input->post('eMail'),
 			'idLevel'		=> 2, //level = 2 ==> Normal User
 			'First_Name'	=> $this->input->post('firstName'),
 			'Middle_Name'	=> $this->input->post('secondName'),
 			'Last_Name_1'	=> $this->input->post('firstSurname'),
 			'Last_Name_2'	=> $this->input->post('secondSurname'),
 			'Married_Name'	=> $this->input->post('marriedName'),
-			'Birthdate'		=> $this->input->post('birthDate'),
+			'Birthdate'		=> changeDateFormat($this->input->post('birthDate')),
 			'Birth_City'	=> $city,
 			'idHonorific'	=> $this->input->post('honorific'),
 			'Sex'			=> $this->input->post('sex'),

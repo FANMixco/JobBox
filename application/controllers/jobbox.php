@@ -32,7 +32,7 @@ class Jobbox extends CI_Controller {
 			if (!empty($user)): //The info is correct!
 				$this->session->set_userdata(idUser,$user[idUser]);
 				$this->session->set_userdata(Level,$user[Level]);
-				$this->session->set_userdata(name,$user[name].' '.$user[surname]);
+				$this->session->set_userdata(name,$user['First_Name'].' '.$user['Last_Name_1']);
 				$this->session->set_userdata('Credentials',Credentials);
 				//Redirect!
 				redirect('admin');
@@ -45,6 +45,19 @@ class Jobbox extends CI_Controller {
 		$this->load->view('template/wrapper',$data);
 	}
 	
+	/*--------------------------------------------------------------------------*/
+	/*  logout ==> Terminates an user's session									*/	
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	public function logout(){
+		$this->session->unset_userdata(idUser);
+		$this->session->unset_userdata(Level);
+		$this->session->unset_userdata(name);
+		$this->session->sess_destroy();
+		
+		redirect('login');
+	}
+	
 	/*--------------------------------------------------------------------------**
 	**  admin ==> Displays the dashboard for each type of user					**
 	**																			**
@@ -52,13 +65,26 @@ class Jobbox extends CI_Controller {
 	**--------------------------------------------------------------------------*/
 	public function admin(){
 		if ($this->session->userdata('Credentials')!=Credentials) redirect('logout');
-		switch($this->session->userdata(idLevel)){
+		switch($this->session->userdata(Level)){
 			case 1:
+				$data = array(
+					'title'		=>	$this->lang->line('txt_dashboard'),
+					'mainView'	=> 	'home'
+				);				
 				break;
 			case 2:
 			default:
+				$this->load->helper('js');
+				$this->load->model('userModel');
+				$data = array(
+					'title'		=>	$this->lang->line('txt_my_profile'),
+					'mainView'	=> 	'forms/profile',
+					'scripts'	=>  jQuery_UI(),
+					'user'		=>  $this->userModel->getUser($this->session->userdata(idUser))
+				);
 				break;
 		}
+		$this->load->view('template/wrapper',$data);
 	}
 }
 

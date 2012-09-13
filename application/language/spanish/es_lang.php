@@ -8,6 +8,14 @@ $lang['SuperNova']             	  = "SuperNova 2012";
 
 $lang['txt_home']	              = "Bienvenido a JobBox!"; //System Name
 
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/* MENU		 						 																						*/
+/* Texts of the menu				 																						*/
+/*																															*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+$lang['menu_view_jobs']           = "Bolsa de Trabajo";
+$lang['menu_register']            = "Registrese";
+$lang['menu_search_job']          = "Buscar Empleo";
 
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -18,11 +26,19 @@ $lang['txt_home']	              = "Bienvenido a JobBox!"; //System Name
 
 $lang['txt_login']	              = "Iniciar Sesi&oacute;n";
 $lang['txt_register']             = "Registrarse";
+$lang['txt_logout']            	  = "Salir";
 $lang['txt_enter'] 	              = "Entrar";
 $lang['txt_send'] 	              = "Enviar";
 $lang['txt_save'] 	              = "Guardar";
 $lang['txt_advanced_search'] 	              = "B&uacute;squeda Avanzada";
 $lang['txt_search'] 	              = "Buscar";
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/* ACTIONS	 						 																						*/
+/* Actions executed by the users	 																						*/
+/*																															*/
+/*--------------------------------------------------------------------------------------------------------------------------*/
+$lang['txt_search']               = "Buscar";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* TEXTS 						 																							*/
@@ -41,6 +57,14 @@ $lang['txt_meter']		          = "Metros";
 $lang['txt_feet']		          = "Pies";
 $lang['txt_pounds']		          = "Lbs";
 $lang['txt_kgs']		          = "Kgs";
+
+$lang['txt_advanced_search']      = "B&uacute;squeda Avanzada";
+
+//Mi perfil
+$lang['txt_my_profile']		      = "Mi Perfil";
+$lang['txt_my_info']		      = "Mi Informaci&oacute;n";
+$lang['txt_ac_history']		      = "Historial Acad&eacute;mico";
+$lang['txt_job_history']	      = "Experiencia Profesional";
 
 
 /*--------------------------------------------------------------------------------------------------------------------------*/

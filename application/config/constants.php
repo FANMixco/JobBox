@@ -97,7 +97,7 @@ define('city','City');
 
 //Users
 define('idUser','idUser');
-define('idLevel','idLevel');
+define('Level','idLevel');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
