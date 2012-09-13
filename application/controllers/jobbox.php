@@ -9,9 +9,11 @@ class Jobbox extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('jobModel');
+		$this->load->helper('js');
 		$data = array(
 			'title'		=>	$this->lang->line('txt_home'),
 			'mainView'	=> 	'home',
+			'scripts'	=> jlist(),
 			'jobs'		=> 	$this->jobModel->getRecentJobs()
 		);
 		$this->load->view('template/wrapper',$data);
@@ -69,7 +71,7 @@ class Jobbox extends CI_Controller {
 			case 1:
 				$data = array(
 					'title'		=>	$this->lang->line('txt_dashboard'),
-					'mainView'	=> 	'home'
+					'mainView'	=> 	'forms/dashboard'
 				);				
 				break;
 			case 2:

@@ -17,8 +17,8 @@
 	<div>
 		<?php
 			if ($this->session->userdata('Credentials')==Credentials):
-				echo anchor(base_url('logout'),$this->lang->line('txt_logout'));
-				echo '<a id="login" href="javascript:void(0)">'.$this->session->userdata(name).'</a>';
+				echo anchor(base_url('admin'),$this->session->userdata(name));
+				echo anchor(base_url('logout'),$this->lang->line('txt_logout'));				
 			else:
 				echo anchor('user/register',$this->lang->line('txt_register'));
 				echo '<a id="login" href="javascript:void(0)">'.$this->lang->line('txt_login').'</a>';
@@ -53,7 +53,7 @@
 			endif;			
 		?>
 		<br/>
-		<img id="logo" src="<?php echo base_url('images/system/logo.png'); ?>" />
+		<a href="<?php echo base_url(); ?>"><img id="logo" src="<?php echo base_url('images/system/logo.png'); ?>" /></a>
 		<h1><?php echo $this->lang->line('jobbox'); ?></h1>		
 	</div>
 </div><!-- /header -->
@@ -65,17 +65,15 @@
 <tr>
 <td valign="top" width="180px;">
 <ul id="nav">	
-	<li><?php echo anchor(base_url(),$this->lang->line('menu_view_jobs')); ?></li>
+	<li><?php echo anchor(base_url(),$this->lang->line('menu_job_bag')); ?></li>
 	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_register')); ?></li>
 	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_search_job')); ?></li>
 	<br />
-	<?php 
-		if ($this->session->userdata('level')==1)
-		{
-	?>
+	<?php if ($this->session->userdata(Level)==1):?>
 		<li>Administrar</li><hr />
 	<?php
-	echo '
+		echo '<li>'.anchor(base_url('job'),$this->lang->line('menu_job_bag')).'</li>';
+	/*echo '
 			<li><a href='.base_url("academic_levels/").'>Niveles Educativos</a></li>
 			<li><a href='.base_url("academic_majors/").'>Carreras</a></li>
 			<li><a href='.base_url("countries/").'>Pa&iacute;ses</a></li>
@@ -90,8 +88,8 @@
 			<li><a href='.base_url("schools/").'>Centros de Estudio</a></li>
 			<li><a href='.base_url("users/").'>Usuarios</a></li>
 			<li><a href='.base_url("user_level/").'>Niveles de Usuarios</a></li>
-				';
-		}
+				';*/
+	endif;
 	?>
 </ul>
 </td>

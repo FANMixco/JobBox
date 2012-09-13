@@ -46,6 +46,8 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 |
 */
 define('Credentials','J0BboXx');
+define('uri_replace',	'fnb9784r');  //Just a random string to replace the %2F in the URLs
+define('resultsPerPage', 5);
 
 /*
 |--------------------------------------------------------------------------

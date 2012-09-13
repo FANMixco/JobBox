@@ -13,7 +13,7 @@ $lang['txt_home']	              = "Bienvenido a JobBox!"; //System Name
 /* Texts of the menu				 																						*/
 /*																															*/
 /*--------------------------------------------------------------------------------------------------------------------------*/
-$lang['menu_view_jobs']           = "Bolsa de Trabajo";
+$lang['menu_job_bag']	          = "Bolsa de Trabajo";
 $lang['menu_register']            = "Registrese";
 $lang['menu_search_job']          = "Buscar Empleo";
 
@@ -30,8 +30,6 @@ $lang['txt_logout']            	  = "Salir";
 $lang['txt_enter'] 	              = "Entrar";
 $lang['txt_send'] 	              = "Enviar";
 $lang['txt_save'] 	              = "Guardar";
-$lang['txt_advanced_search'] 	              = "B&uacute;squeda Avanzada";
-$lang['txt_search'] 	              = "Buscar";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* ACTIONS	 						 																						*/
@@ -39,6 +37,12 @@ $lang['txt_search'] 	              = "Buscar";
 /*																															*/
 /*--------------------------------------------------------------------------------------------------------------------------*/
 $lang['txt_search']               = "Buscar";
+$lang['txt_go_back']              = "&laquo; Regresar";
+$lang['txt_apply']             	  = "Aplicar";
+$lang['txt_edit']             	  = "Editar";
+
+//Admin
+$lang['txt_admin_jobs']           = "Administrar Bolsa de Trabajo";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* TEXTS 						 																							*/
@@ -59,12 +63,18 @@ $lang['txt_pounds']		          = "Lbs";
 $lang['txt_kgs']		          = "Kgs";
 
 $lang['txt_advanced_search']      = "B&uacute;squeda Avanzada";
+$lang['txt_dashboard']      	  = "DashBoard";
 
 //Mi perfil
 $lang['txt_my_profile']		      = "Mi Perfil";
 $lang['txt_my_info']		      = "Mi Informaci&oacute;n";
 $lang['txt_ac_history']		      = "Historial Acad&eacute;mico";
 $lang['txt_job_history']	      = "Experiencia Profesional";
+
+//Jobs
+$lang['txt_new_job']	      	  = "Nueva Plaza de Trabajo";
+$lang['txt_job_desc']	      	  = "Descripci&oacute;n del Trabajo";
+$lang['txt_job_reqs']	      	  = "Requerimientos del Trabajo";
 
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -162,6 +172,7 @@ $lang['lbl_position_name']        = "Cargo:";
 $lang['lbl_description']          = "Descripci&oacute;n:";
 $lang['lbl_type']       		  = "Tipo:";
 $lang['lbl_requirements']         = "Requerimientos:";
+$lang['lbl_publish_date']         = "Fecha de Publicaci&oacute;n:";
 
 //Menu
 $lang['lbl_profile']        	  = "Perfil:";

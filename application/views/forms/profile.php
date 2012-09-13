@@ -18,79 +18,63 @@
 				<td><?php echo form_label($this->lang->line('lbl_first_name')); ?></td>
 				<td><?php echo $user['First_Name']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_second_name')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>		
+				<td><?php echo $user['Middle_Name']; ?></td>		
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_first_surname')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>
+				<td><?php echo $user['Last_Name_1']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_second_surname')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>		
+				<td><?php echo $user['Last_Name_2']; ?></td>		
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_married_name')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>
+				<td><?php echo $user['Married_Name']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_birth_date')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>		
+				<td><?php echo changeDateFormat($user['Birthdate'],true); ?></td>		
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_sex')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>
+				<td><?php echo $user['Sex']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_honorific')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>
+				<td><?php echo $user['Honorific']; ?></td>
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_birth_country')); ?></td>
-				<td><?php echo $user['First_Name']; ?></td>
+				<td><?php echo $user['Country']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_birth_province')); ?></td>
-				<td><select id="state" name="state"></select></td>
+				<td><?php echo $user['State']; ?></td>
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_birth_city')); ?></td>
-				<td><select id="city" name="city"></select></td>
+				<td><?php echo $user['City']; ?></td>
 			</tr>
 			<tr>
 				<td colspan="5"><h2 style="margin-top:10px;"><?php echo $this->lang->line('txt_docs') ?></h2></td>
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_document')); ?></td>
-				<td><?php echo form_input('idDoc',$this->input->post('idDoc')); ?></td>
+				<td><?php echo $user['idDocument']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_passport')); ?></td>
-				<td><?php echo form_input('passport',$this->input->post('passport')); ?></td>				
+				<td><?php echo $user['Passport']; ?></td>				
 			</tr>
 			<tr>				
 				<td><?php echo form_label($this->lang->line('lbl_nit')); ?></td>
-				<td><?php echo form_input('nit',$this->input->post('nit')); ?></td>
+				<td><?php echo $user['NIT']; ?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_isss')); ?></td>
-				<td><?php echo form_input('isss',$this->input->post('isss')); ?></td>
+				<td><?php echo $user['ISSS']; ?></td>
 			</tr>	
 			<tr>
 				<td colspan="5"><h2 style="margin-top:10px;"><?php echo $this->lang->line('txt_other_info') ?></h2></td>
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_height')); ?></td>
-				<td>
-					<?php 
-						echo form_input('height',$this->input->post('height')); 
-						echo form_dropdown('heightUnit',
-							array('m' => $this->lang->line('txt_meter'),'ft' => $this->lang->line('txt_feet')),
-							$this->input->post('heightUnit'),
-							'style="margin-left:5px; width:65px;"'); 
-					?>
-				</td>
+				<td><?php echo $user['Height'].$user['H_Unit_Type'];?></td>
 				<td class="tright"><?php echo form_label($this->lang->line('lbl_religion')); ?></td>
-				<td><?php echo form_dropdown('religion',$religions,$this->input->post('religion')); ?></td>
+				<td><?php echo $user['Religion']; ?></td>
 			</tr>
 			<tr>
 				<td><?php echo form_label($this->lang->line('lbl_weight')); ?></td>
-				<td>
-					<?php 
-						echo form_input('weight',$this->input->post('weight')); 
-						echo form_dropdown('weightUnit',
-							array('lb' => $this->lang->line('txt_pounds'),'kg' => $this->lang->line('txt_kgs')),
-							$this->input->post('weightUnit'),
-							'style="margin-left:5px; width:65px;"'); 
-					?>
-				</td>
+				<td><?php echo $user['Weight'].$user['W_Unit_Type'];?></td>
 			</tr>
 			<tr>
 				<td colspan="5">

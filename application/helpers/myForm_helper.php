@@ -206,8 +206,8 @@ function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$lin
 				$tableData .= '<td><div class="thumb"><img src="'.$img.'" /></td>'; //Add the image
 			endif;			
 			//Get the link
-			$link = anchor($linkData[0].encodeID($record[$linkData[1]]),$ci->lang->line('txt_view').' [+]');
-			$tableData .= '<td><h3 class="name">'.$record[$indexes[1]].'</h3>
+			$link = anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$ci->lang->line('txt_view').' [+]');
+			$tableData .= '<td><h2 class="name">'.anchor($linkData[0].'/'.encodeID($record[$linkData[1]]),$record[$indexes[1]]).'</h2>
 				<p>'.truncate($record[$indexes[2]],210).'</p>'.$link.'</td>';  //Add the info
 			
 			$tableData .= '</tr>'; //Close the row
