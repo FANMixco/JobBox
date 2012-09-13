@@ -1,5 +1,4 @@
-<h1><?php echo $this->lang->line('txt_home'); ?></h1><hr />
-<br />
+
 <?php 
 	echo printList(
 		$this->lang->line('txt_search'),

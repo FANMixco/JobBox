@@ -9,6 +9,8 @@ p,a,li,label,span
 /* General Selectors */
 h1{color:#950000; text-align:right;}
 h2{color: #003f85;}
+label{color: #6F0000;}
+td{padding:3px 2px;}
 a{
 	text-decoration:none;
 	/* Transitions */
@@ -106,94 +108,51 @@ img#logo-siman{max-height:125px;max-width:125px;margin:10px 0 0 10px;float:left;
 img#logo{max-height:75px;max-width:75px; float:right; margin:5px 0 0 15px;}
 
 /*Navigation menu*/
+ul#nav{width:180px; float:left; font-size:11px; margin:3px 10px 10px 5px;}
 ul#nav li{
     list-style:none;
-/* Fondo Degradado */
-
-    /* CSS3 */
-
-    background: linear-gradient(left, #BDBDBD, #1C1C1C);
-
-    /* Safari 4+ y Chrome 1+ */
-
-    background-image:-webkit-gradient(left, color-stop(0, #BDBDBD), color-stop(1, #1C1C1C));
-
-    /* Safari 5.1+ y Chrome 10+ */
-
-    background-image:-webkit-linear-gradient(left, #BDBDBD, #1C1C1C);
-
-    /* Firefox 3.6+ */
-
-    background-image:-moz-linear-gradient(left, #BDBDBD, #1C1C1C);
-
-    /* Opera 11.10+ */
-
-    background-image:-o-linear-gradient(left, #BDBDBD, #1C1C1C);
-
-    /* Internet Explorer 5.5+ - 9 */
-
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#BDBDBD', EndColorStr='#1C1C1C',GradientType=1);
-
-    /* Internet Explorer 10+ */
-
-    background: -ms-linear-gradient(left, #BDBDBD, #1C1C1C);
-
+	padding:2px 3px;	
+	/* Fondo Degradado */    
+    background: linear-gradient(left, #2F2F2F, #5E5E5E);    /* CSS3 */
+    background-image:-webkit-gradient(left, color-stop(0, #2F2F2F), color-stop(1, #5E5E5E)); /* Safari 4+ y Chrome 1+ */   
+    background-image:-webkit-linear-gradient(left, #2F2F2F, #5E5E5E); /* Safari 5.1+ y Chrome 10+ */    
+    background-image:-moz-linear-gradient(left, #2F2F2F, #5E5E5E); /* Firefox 3.6+ */    
+    background-image:-o-linear-gradient(left, #2F2F2F, #5E5E5E); /* Opera 11.10+ */    
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#2F2F2F', EndColorStr='#5E5E5E',GradientType=1); /* Internet Explorer 5.5+ - 9 */    
+    background: -ms-linear-gradient(left, #2F2F2F, #5E5E5E); /* Internet Explorer 10+ */
     /* Color alternativo para versiones que no soporten degradados */
-
-    background-color: #BDBDBD;
+    background-color: #2F2F2F;
+    background-repeat:repeat-y;
+	/*Transitions*/
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+ul#nav li:hover{
+	/* Fondo Degradado */    
+    background: linear-gradient(left, #720912, #9A1B27);    /* CSS3 */
+    background-image:-webkit-gradient(left, color-stop(0, #720912), color-stop(1, #9A1B27)); /* Safari 4+ y Chrome 1+ */   
+    background-image:-webkit-linear-gradient(left, #720912, #9A1B27); /* Safari 5.1+ y Chrome 10+ */    
+    background-image:-moz-linear-gradient(left, #720912, #9A1B27); /* Firefox 3.6+ */    
+    background-image:-o-linear-gradient(left, #720912, #9A1B27); /* Opera 11.10+ */    
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#720912', EndColorStr='#9A1B27',GradientType=1); /* Internet Explorer 5.5+ - 9 */    
+    background: -ms-linear-gradient(left, #720912, #9A1B27); /* Internet Explorer 10+ */
+    /* Color alternativo para versiones que no soporten degradados */
+    background-color: #720912;
     background-repeat:repeat-y;
 }
-
 ul#nav li a{
     display:block;
     padding:3px 7px;
-    text-decoration:none;    
+    text-decoration:none;  
 }
 
-ul#nav li, ul#nav li a{        
-    color:White;
-    font-weight:bold;
-    font-family:Palatino Linotype;
-    font-size:small;
-}
-
-ul#nav li a:hover{
-/* Fondo Degradado */
-
-    /* CSS3 */
-
-    background: linear-gradient(left, #610B0B, #8A0808);
-
-    /* Safari 4+ y Chrome 1+ */
-
-    background-image:-webkit-gradient(left, color-stop(0, #610B0B), color-stop(1, #8A0808));
-
-    /* Safari 5.1+ y Chrome 10+ */
-
-    background-image:-webkit-linear-gradient(left, #610B0B, #8A0808);
-
-    /* Firefox 3.6+ */
-
-    background-image:-moz-linear-gradient(left, #610B0B, #8A0808);
-
-    /* Opera 11.10+ */
-
-    background-image:-o-linear-gradient(left, #610B0B, #8A0808);
-
-    /* Internet Explorer 5.5+ - 9 */
-
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#610B0B', EndColorStr='#8A0808',GradientType=1);
-
-    /* Internet Explorer 10+ */
-
-    background: -ms-linear-gradient(left, #610B0B, #8A0808);
-
-    /* Color alternativo para versiones que no soporten degradados */
-
-    background-color: #8A0808;
-
-    background-repeat:repeat-y;
-}
+ul#nav li, ul#nav li a{color:white;font-weight:bold;}
 
 
 /* Classes */
+.left{float:left;}
+.right{float:right;}
+.tright{text-align:right;}
