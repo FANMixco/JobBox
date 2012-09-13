@@ -17,6 +17,44 @@ a{
 	-webkit-transition:color 0.5s; /* Safari and Chrome */
 	-o-transition:color 0.5s; /* Opera */
 }
+hr{margin-top:2px;border-top:1px solid #dee1e1;border-bottom:1px solid #fff;}
+input,textarea,select{
+	/*Box-Shadow*/
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	/*Transitions*/
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	/*Misc*/
+	padding:2px;	
+}
+input[type="text"],input[type="password"],textarea{
+	/*Borders*/
+	border-top:2px solid #d9d9d9;
+	border-left:1px solid #e2e2e2;
+	border-bottom:1px solid #e2e2e2;
+	border-right:1px solid #f2f2f1;
+	width:182px;	
+}
+input[type="text"],input[type="password"],textarea{
+	/*Border-radius*/
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+input:focus,textarea:focus,select:focus{
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+}
 
 /* Template Structure */
 div#header{
@@ -26,10 +64,12 @@ div#header{
 	margin-bottom:10px;
 	color:white;
 }
-div#header div{float:right; margin:10px 35px 0 0; text-align:center;}
-div#header a,div#footer a{color:#D3D3D3; margin:0 2px;}
+div#header > div{float:right; margin:10px 35px 0 0; text-align:center;}
+div#header a,div#footer a{color:#D3D3D3; padding:2px;}
 div#header a:hover,div#footer a:hover{color:white;}
 div#header h1{font-size:36px; color:white; float:right; font-style:italic; margin-top:10px;}
+div#login-panel{position:absolute; background-color:#666666; right:61px; width:16%; height:18%; z-index:10; text-align:justify; padding:5px; font-size:12px;}
+div#login-panel input[type="text"],input[type="password"]{width:95%;}
 div#content{
 	background-color:white;
 	min-height:100px;

@@ -18,28 +18,35 @@
 		<?php
 			if ($this->session->userdata('Credentials')==Credentials):
 				echo anchor(base_url('user/logout'),$this->lang->line('txt_register'));
-				echo anchor('javascript:void(0)',$this->lang->line('txt_login'),array('id' => 'login'));
+				echo '<a id="login" href="javascript:void(0)">'.$this->lang->line('txt_login').'</a>';
 			else:
-				echo anchor(base_url('user/register'),$this->lang->line('txt_register'));
-				echo anchor('javascript:void(0)',$this->lang->line('txt_login'));
+				echo anchor('user/register',$this->lang->line('txt_register'));
+				echo '<a id="login" href="javascript:void(0)">'.$this->lang->line('txt_login').'</a>';
 				//Login Form
-				echo '<div id="login-panel" style="display:none;">';
+				echo '<div id="login-panel" style="display:none;"><br/>';
 				echo form_open('login');
-				echo '<table>
-					<tr>
-						<td>'.form_label($this->lang->line('lbl_user')).'</td>
-						<td>'.form_input('username').'</td>
-					</tr>
-					<tr>
-						<td>'.form_label($this->lang->line('lbl_pass')).'</td>
-						<td>'.form_input('password').'</td>
-					</tr>
-				</table>';				
+				echo '<table width="100%">
+					<tr><td>'.form_label($this->lang->line('lbl_user')).'</td></tr>
+					<tr><td>'.form_input('username').'</td></tr>
+					<tr><td>'.form_label($this->lang->line('lbl_pass')).'</td></tr>
+					<tr><td>'.form_input('password').'</td></tr>
+					<tr><td style="text-align:right;">'.form_submit('login',$this->lang->line('txt_enter')).'</td>
+				</table>';
 				echo form_close();
 				//Script
 				echo '<script type="text/javascript">
 					$("#login").click(function(){
-						$("login-panel").slideToogle(200);
+						var panel = $("#login-panel");
+						if (panel.css("display") == "none"){$("#login").css("background-color","#666666");}
+						else{$("#login").css("background-color","black");}
+						panel.slideToggle(200);						
+					});
+				
+					$(document).keydown(function(e) {
+						if (e.keyCode == 27) {
+							$("#login-panel").hide(0);
+							$("#login").css("background-color","black");
+						}
 					});
 				</script>';
 				echo '</div>';

@@ -37,5 +37,25 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+/*
+|--------------------------------------------------------------------------
+| Application Constants
+|--------------------------------------------------------------------------
+|
+| All the constants used through the app
+|
+*/
+define('Credentials','J0BboXx');
+
+/*
+|--------------------------------------------------------------------------
+| TABLE NAMES
+|--------------------------------------------------------------------------
+|
+| The names of the tables of the database
+|
+*/
+define('users','users');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

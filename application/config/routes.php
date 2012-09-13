@@ -41,6 +41,14 @@
 $route['default_controller'] = "jobbox";
 $route['404_override'] = '';
 
+/*
+| -------------------------------------------------------------------------
+| SPECIAL URI ROUTING
+| -------------------------------------------------------------------------
+|
+*/
+
+$route['login'] = 'jobbox/login';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
