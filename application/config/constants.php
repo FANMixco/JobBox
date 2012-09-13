@@ -67,11 +67,24 @@ define('users','users');
 */
 
 //General
+define('status','Status');
 define('desc','Description');
 
 //Jobs-View
 define('idJob','idJob');
 define('jobName','Position_Name');
+
+//Honorifics
+define('idHonorific','idHonorific');
+define('honorific','Honorific');
+
+//Religions
+define('idReligion','idReligion');
+define('religion','Religion');
+
+//Countries
+define('idCountry','idCountry');
+define('country','Country');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

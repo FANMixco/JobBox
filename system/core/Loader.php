@@ -272,7 +272,7 @@ class CI_Loader {
 			show_error('The model name you are loading is the name of a resource that is already being used: '.$name);
 		}
 
-		$model = strtolower($model);
+		//$model = strtolower($model); //I'll comment this line because I got an issue with camelized models F. Rega
 
 		foreach ($this->_ci_model_paths as $mod_path)
 		{
@@ -896,7 +896,8 @@ class CI_Loader {
 		}
 
 		// We'll test for both lowercase and capitalized versions of the file name
-		foreach (array(ucfirst($class), strtolower($class)) as $class)
+		//foreach (array(ucfirst($class), strtolower($class)) as $class)
+		foreach (array(ucfirst($class), $class) as $class)
 		{
 			$subclass = APPPATH.'libraries/'.$subdir.config_item('subclass_prefix').$class.'.php';
 

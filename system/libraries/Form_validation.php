@@ -1279,6 +1279,77 @@ class CI_Form_validation {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Valid Date
+	 *
+	 * Checks if a string is a valid date in format dd/mm/yyyy
+	 * 
+	 *
+	 * @access	public
+	 * @param	string
+	 * @return	bool
+	 */
+	public function valid_date($str)
+	{
+		$day 	= substr($str,0,2);
+		$month 	= substr($str,3,2);
+		$year 	= substr($str,6);
+		return (bool) checkdate($month,$day,$year);
+	}
+	
+	// --------------------------------------------------------------------
+
+	/**
+	 * Valid Hour
+	 *
+	 * Checks if an hour is valid in the 12-hour format
+	 * 
+	 *
+	 * @access	public
+	 * @param	str
+	 * @return	bool
+	 */
+	public function valid_hour($hour)
+	{		
+		return (bool) ($hour >0 && $hour <13 && $this->integer($hour));
+	}
+	
+	// --------------------------------------------------------------------
+
+	/**
+	 * Valid Minute
+	 *
+	 * Checks if a number can be a minute
+	 * 
+	 *
+	 * @access	public
+	 * @param	str
+	 * @return	bool
+	 */
+	public function valid_minute($minute)
+	{		
+		return (bool) ($minute >-1 && $minute <60 && $this->integer($minute));
+	}
+	
+	// --------------------------------------------------------------------
+
+	/**
+	 * Valid AMPPM
+	 *
+	 * Checks if a string is a valid AM or PM notation
+	 * 
+	 *
+	 * @access	public
+	 * @param	string
+	 * @return	bool
+	 */
+	public function valid_AMPM($ampm)
+	{		
+		return (bool) ($ampm =='AM' || $ampm =='PM');
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
 	 * Prep data for form
 	 *
 	 * This function allows HTML to be safely shown in a form.
