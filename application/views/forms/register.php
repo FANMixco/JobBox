@@ -1,7 +1,22 @@
 <p><?php echo $this->lang->line('msg_register') ?></p><br/><br/>
 <?php echo form_open(); ?>
-<h2><?php echo $this->lang->line('txt_personal_info') ?></h2>
+<h2><?php echo $this->lang->line('txt_system_access') ?></h2>
 <table>
+	<tr>		
+		<td><?php echo form_label($this->lang->line('lbl_email')); ?></td>
+		<td class="required"><?php echo form_input('eMail',$this->input->post('eMail')); ?></td>
+		<td class="tright"><?php echo form_label($this->lang->line('lbl_user')); ?></td>
+		<td class="required"><?php echo form_input('username',$this->input->post('username')); ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_label($this->lang->line('lbl_pass')); ?></td>
+		<td class="required"><?php echo form_password('password',$this->input->post('password')); ?></td>
+		<td class="tright"><?php echo form_label($this->lang->line('lbl_pass_confirm')); ?></td>
+		<td class="required"><?php echo form_password('passConfirm',$this->input->post('passConfirm')); ?></td>		
+	</tr>
+	<tr>
+		<td colspan="5"><h2><?php echo $this->lang->line('txt_personal_info') ?></h2></td>
+	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('lbl_first_name')); ?></td>
 		<td class="required"><?php echo form_input('firstName',$this->input->post('firstName')); ?></td>
@@ -28,9 +43,9 @@
 	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('lbl_birth_country')); ?></td>
-		<td><?php echo form_dropdown('country',$countries,$this->input->post('country')); ?></td>
+		<td><?php echo form_dropdown('country',$countries,$this->input->post('country'),'id="country"'); ?></td>
 		<td class="tright"><?php echo form_label($this->lang->line('lbl_birth_province')); ?></td>
-		<td><select id="province" name="province"></select></td>
+		<td><select id="state" name="state"></select></td>
 	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('lbl_birth_city')); ?></td>
@@ -91,5 +106,36 @@
 
 <script type="text/javascript">
 	$( "#datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
+	var State = $("#state").val();
+	var City = $("#city").val();
 	
+	if (State!=null && City!=null)
+	{
+		$('#state').removeAttr('disabled');
+		$('#city').removeAttr('disabled');
+	}			
+	
+	$("#country").change(function () {
+		var Value = $("#country").val();
+		if (Value == "null")
+		{
+			$('#state').attr('disabled','disabled');
+			$('#city').attr('disabled','disabled');
+			$("#city").empty();
+		}
+		else
+			$('#state').removeAttr('disabled');
+		$("#state").empty();
+		$.get("<?php echo base_url('country/getStates'); ?>"+ '/'+ Value, function(data){$("#state").html(data)});
+	});
+	
+	$("#state").change(function () {
+		var Value = $("#state").val();
+		if (Value == "null")
+			$('#city').attr('disabled','disabled');                       
+		else
+			$('#city').removeAttr('disabled');
+		$("#city").empty();
+		$.get("<?php echo base_url('country/getCities'); ?>"+ '/'+ Value, function(data){$("#city").append(data)});
+	});
 </script>

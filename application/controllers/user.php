@@ -2,6 +2,12 @@
 
 class User extends CI_Controller {
 
+	/*--------------------------------------------------------------------------*/
+	/*  __construct ==> Call the Model constructor 								*/
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	function __construct(){parent::__construct(); $this->load->model('userModel');}	
+
 	
 	public function index()
 	{
@@ -20,7 +26,13 @@ class User extends CI_Controller {
 			$this->form_validation->set_rules('firstSurname',$this->lang->line('txt_surname'),'required');
 			$this->form_validation->set_rules('idDoc',$this->lang->line('txt_surname'),'required');						
 			$this->form_validation->set_rules('birthDate',$this->lang->line('txt_birth_date'),'required|valid_date');
-			$this->form_validation->set_rules('username',$this->lang->line('txt_user'),'required|is_unique['.users.'.'.userName.']');
+			$this->form_validation->set_rules('eMail',$this->lang->line('txt_email'),'required|valid_email|is_unique['.users.'.eMail]');
+			$this->form_validation->set_rules('username',$this->lang->line('txt_user'),'required|is_unique['.users.'.idUser]');
+			$this->form_validation->set_rules('password',$this->lang->line('txt_pass'),'required|matches[passConfirm]');
+			if ($this->form_validation->run()):
+				$this->_set_user();
+				redirect('user/registered');
+			endif;
 		endif;	
 		//load the resources
 		$this->load->helper('js');
@@ -36,6 +48,50 @@ class User extends CI_Controller {
 			'scripts'	=> jQuery_UI()			
 		);
 		$this->load->view('template/wrapper',$data);
+	}
+	
+	/*--------------------------------------------------------------------------*/
+	/*  registered ==> Displays the user registered notification view 			*/	
+	/*																			*/
+	/*--------------------------------------------------------------------------*/
+	public function registered(){
+		$data['title'] 		= $this->lang->line('msg_congrats');
+		$data['mainView'] 	= 'forms/registered';
+		$this->load->view('template/wrapper',$data);
+	}
+	
+	/*--------------------------------------------------------------------------**
+	**  _set_user ==> Sets an user's basic information			 				**
+	**	$user : ID of the user to update. If NULL, the info will be inserted	**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function _set_user($user=NULL){
+		$city = ($this->input->post('city')!=0)? $this->input->post('city'): NULL;
+		$data = array(
+			'idUser'		=> $this->input->post('username'),
+			'Password' 		=> $this->input->post('password'),
+			'idLevel'		=> 2, //level = 2 ==> Normal User
+			'First_Name'	=> $this->input->post('firstName'),
+			'Middle_Name'	=> $this->input->post('secondName'),
+			'Last_Name_1'	=> $this->input->post('firstSurname'),
+			'Last_Name_2'	=> $this->input->post('secondSurname'),
+			'Married_Name'	=> $this->input->post('marriedName'),
+			'Birthdate'		=> $this->input->post('birthDate'),
+			'Birth_City'	=> $city,
+			'idHonorific'	=> $this->input->post('honorific'),
+			'Sex'			=> $this->input->post('sex'),
+			'idReligion'	=> $this->input->post('religion'),
+			'idDocument'	=> $this->input->post('idDoc'),
+			'Passport'		=> $this->input->post('passport'),
+			'ISSS'			=> $this->input->post('isss'),
+			'NIT'			=> $this->input->post('nit'),
+			'Height'		=> $this->input->post('height'),
+			'H_Unit_Type'	=> $this->input->post('heightUnit'),
+			'Weight'		=> $this->input->post('weight'),
+			'W_Unit_Type'	=> $this->input->post('weightUnit'),			
+		);
+		
+		return ($user==NULL)?$this->userModel->registerUser($data):$this->userModel->update($user,$data);
 	}
 }
 

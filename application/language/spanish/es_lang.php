@@ -29,8 +29,9 @@ $lang['txt_send'] 	              = "Enviar";
 
 //Users
 $lang['txt_personal_info']        = "Datos Personales";
-$lang['txt_other_info']	          = "Otra Informaci&oacute;n";
 $lang['txt_docs']	          	  = "Documentaci&oacute;n";
+$lang['txt_other_info']	          = "Otra Informaci&oacute;n";
+$lang['txt_system_access']     	  = "Acceso al Sistema";
 $lang['txt_male']		          = "Masculino";
 $lang['txt_female']		          = "Femenino";
 $lang['txt_meter']		          = "Metros";
@@ -155,7 +156,9 @@ $lang['lbl_user_levels']       	  = "Niveles de Usuarios:";
 /* All messages displayed in the app																						*/
 /*																															*/
 /*--------------------------------------------------------------------------------------------------------------------------*/
+$lang['msg_congrats']             = "Felicidades!";
 $lang['msg_no_jobs']              = "No existe ninguna plaza de trabajo.";
 $lang['msg_register']             = "Registrese en JobBox y podr&aacute; aplicar a todas las plazas del sistema, participar en procesos de selecci&oacute;n, subir su perfil y darse a conocer en el medio profesional.";
+$lang['msg_registered']           = "Felicidades! Su cuenta ha sido creada y est&aacute; lista para usarse. Recuerde actualizar su perfil una vez ingrese al sistema.";
 
 ?>

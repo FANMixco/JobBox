@@ -95,7 +95,7 @@ div#header a,div#footer a{color:#D3D3D3; padding:2px;}
 div#header a:hover,div#footer a:hover{color:white;}
 div#header h1{font-size:36px; color:white; float:right; font-style:italic; margin-top:10px;}
 div#login-panel{position:absolute; background-color:#666666; right:61px; width:16%; height:18%; z-index:10; text-align:justify; padding:5px; font-size:12px;}
-div#login-panel input[type="text"],input[type="password"]{width:95%;}
+div#login-panel input[type="text"], div#login-panel input[type="password"]{width:95%;}
 div#content{
 	background-color:white;
 	min-height:100px;

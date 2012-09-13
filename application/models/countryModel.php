@@ -16,6 +16,26 @@ class CountryModel extends CI_Model{
 	function getCountries(){
 		return $this->db->get_where('countries',array(status => 1))->result_array();
 	}
+	
+	/*--------------------------------------------------------------------------**
+	**  getCountryStates ==> gets all the states that belong to a country		**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getCountryStates($country){
+		return $this->db->get_where('states',array(idCountry => $country,status => 1))->result_array();
+	}
+	
+	/*--------------------------------------------------------------------------**
+	**  getStateCities ==> gets all the cities that belong to a state			**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getStateCities($state){
+		return $this->db->get_where('cities',array(idState => $state,status => 1))->result_array();
+	}
 }
 
 

@@ -86,5 +86,13 @@ define('religion','Religion');
 define('idCountry','idCountry');
 define('country','Country');
 
+//States
+define('idState','idState');
+define('state','State');
+
+//Cities
+define('idCity','idCity');
+define('city','City');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
