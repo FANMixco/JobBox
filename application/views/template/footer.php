@@ -1,4 +1,4 @@
 </div><!-- /content -->
-<div id="footer">ESTE ES EL FOOTER!</div>
+<div id="footer"><?php echo $this->lang->line('SuperNova'); ?></div>
 </body>
 </html>

@@ -6,7 +6,7 @@ class Jobbox extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'title'		=>	$this->lang->line('jobbox'),
+			'title'		=>	$this->lang->line('txt_home'),
 			'mainView'	=> 	'home'
 		);
 		$this->load->view('template/wrapper',$data);

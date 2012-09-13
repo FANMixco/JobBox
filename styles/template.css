@@ -1,5 +1,6 @@
-﻿/* CSS Document */
+/* CSS Document */
 *{margin:0;padding:0px;}
+/*body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}*/
 ol,ul{list-style:none;}
 img{border:0;}
 h1,h2,h3,h4,h5,h6,
@@ -8,6 +9,14 @@ p,a,li,label,span
 
 /* General Selectors */
 h1{color:#950000; text-align:right;}
+a{
+	text-decoration:none;
+	/* Transitions */
+	transition:color 0.5s;
+	-moz-transition:color 0.5s; /* Firefox 4 */
+	-webkit-transition:color 0.5s; /* Safari and Chrome */
+	-o-transition:color 0.5s; /* Opera */
+}
 
 /* Template Structure */
 div#header{
@@ -17,8 +26,13 @@ div#header{
 	margin-bottom:10px;
 	color:white;
 }
+div#header div{float:right; margin:10px 35px 0 0; text-align:center;}
+div#header a,div#footer a{color:#D3D3D3; margin:0 2px;}
+div#header a:hover,div#footer a:hover{color:white;}
+div#header h1{font-size:36px; color:white; float:right; font-style:italic; margin-top:10px;}
 div#content{
 	background-color:white;
+	min-height:100px;
 	position:relative;
 	/* Box-Model */
 	margin-right:auto;
@@ -37,14 +51,16 @@ div#content{
 	box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.75);
 }
 div#footer{
-	background-color:black;	
-	margin-top:-40px;
+	background-color:#CCCCCC;	
+	margin-top:-10px;
+	padding-top:15px;
+	text-align:center;
+	font-size:11px;
 }
 
 /* IDs */
-img#logo-siman,img#logo{max-height:125px;max-width:125px;}
-img#logo-siman{margin:10px 0 0 10px;}
-img#logo{float:right;}
+img#logo-siman{max-height:125px;max-width:125px;margin:10px 0 0 10px;float:left;}
+img#logo{max-height:75px;max-width:75px; float:right; margin:5px 0 0 15px;}
 
 /*Navigation menu*/
 ul#nav li{
@@ -134,5 +150,7 @@ ul#nav li a:hover{
     background-color: #8A0808;
 
     background-repeat:repeat-y;
-    color:white;
 }
+
+
+/* Classes */
