@@ -104,7 +104,6 @@ $lang['lbl_reason']       = "Raz&oacute;n:";
 $lang['lbl_country']       = "Pa&iacute;s:";
 
 //Languages
-$lang['lbl_languages']       = "Idiomas:";
 $lang['lbl_language']       = "Idioma:";
 
 //Jobs
@@ -112,6 +111,25 @@ $lang['lbl_position_name']       = "Cargo:";
 $lang['lbl_description']       = "Descripci&oacute;n:";
 $lang['lbl_type']       = "Tipo:";
 $lang['lbl_requirements']       = "Requerimientos:";
+
+//Menu
+$lang['lbl_profile']       = "Perfil:";
+$lang['lbl_change_pass']       = "Cambiar Contrase&ntilde;a:";
+$lang['lbl_apply']       = "Aplicar Trabajos:";
+$lang['lbl_academic_levels']       = "Niveles Educativos:";
+$lang['lbl_academic_majors']       = "Carreras:";
+$lang['lbl_countries']       = "Pa&iacute;ses:";
+$lang['lbl_states']       = "Departamentos:";
+$lang['lbl_cities']       = "Ciudades:";
+$lang['lbl_honorifics']       = "Tratamientos:";
+$lang['lbl_jobs']       = "Trabajos:";
+$lang['lbl_job_areas']       = "&Aacute;reas de Trabajo:";
+$lang['lbl_languages']       = "Idiomas:";
+$lang['lbl_language_levels']       = "Niveles de Idiomas:";
+$lang['lbl_religions']       = "Religiones:";
+$lang['lbl_schools']       = "Centros de Estudio:";
+$lang['lbl_users']       = "Usuarios:";
+$lang['lbl_user_levels']       = "Niveles de Usuarios:";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* MESSAGES 						 																						*/
