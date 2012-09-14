@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>
-            <?php echo form_label("Tratamiento"); ?>
+            <?php echo form_label($this->lang->line('lbl_honorific')); ?>
         </td>
         <td><?php echo form_input('nhonorific',$this->input->post('nhonorific')); ?></td>
         <td class="required"></td>

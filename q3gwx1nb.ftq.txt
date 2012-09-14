@@ -1,0 +1,56 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    application/views/forms/academic_level/edit.php
+#	deleted:    application/views/forms/academic_major/edit.php
+#	deleted:    application/views/forms/city/edit.php
+#	deleted:    application/views/forms/country/edit.php
+#	deleted:    application/views/forms/history/academic_history/edit.php
+#	deleted:    application/views/forms/history/address_history/edit.php
+#	deleted:    application/views/forms/history/contact/edit.php
+#	deleted:    application/views/forms/history/course_history/edit.php
+#	deleted:    application/views/forms/history/email_history/edit.php
+#	deleted:    application/views/forms/history/job_history/edit.php
+#	deleted:    application/views/forms/history/language_history/edit.php
+#	deleted:    application/views/forms/history/telephone_history/edit.php
+#	deleted:    application/views/forms/honorific/edit.php
+#	deleted:    application/views/forms/job/edit.php
+#	deleted:    application/views/forms/job_area/edit.php
+#	deleted:    application/views/forms/job_sector/edit.php
+#	deleted:    application/views/forms/language/edit.php
+#	deleted:    application/views/forms/language_level/edit.php
+#	deleted:    application/views/forms/religion/edit.php
+#	deleted:    application/views/forms/school/edit.php
+#	deleted:    application/views/forms/state/edit.php
+#	deleted:    application/views/forms/u_level/edit.php
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   application/language/spanish/es_lang.php
+#	modified:   application/views/forms/academic_level/add.php
+#	modified:   application/views/forms/academic_major/add.php
+#	modified:   application/views/forms/city/add.php
+#	modified:   application/views/forms/country/add.php
+#	modified:   application/views/forms/history/address_history/add.php
+#	modified:   application/views/forms/history/contact/add.php
+#	modified:   application/views/forms/history/email_history/add.php
+#	modified:   application/views/forms/history/telephone_history/add.php
+#	modified:   application/views/forms/honorific/add.php
+#	modified:   application/views/forms/job_area/add.php
+#	modified:   application/views/forms/job_sector/add.php
+#	modified:   application/views/forms/language/add.php
+#	modified:   application/views/forms/language_level/add.php
+#	modified:   application/views/forms/religion/add.php
+#	modified:   application/views/forms/school/add.php
+#	modified:   application/views/forms/state/add.php
+#	modified:   application/views/forms/u_level/add.php
+#
+

@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>
-            <?php echo form_label("Pa&iacute;s"); ?>
+            <?php echo form_label($this->lang->line('lbl_country')); ?>
         </td>
         <td><?php echo form_input('ncountry',$this->input->post('ncountry')); ?></td>
         <td class="required"></td>

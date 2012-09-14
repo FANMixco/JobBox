@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>
-            <?php echo form_label("Carrera"); ?>
+            <?php echo form_label($this->lang->line('lbl_academic_major')); ?>
         </td>
         <td><?php echo form_input('amajor',$this->input->post('amajor')); ?></td>
         <td class="required"></td>

@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>
-            <?php echo form_label("Nivel Acad&eacute;mico"); ?>
+            <?php echo form_label($this->lang->line('lbl_academic_level')); ?>
         </td>
         <td><?php echo form_input('alevel',$this->input->post('alevel')); ?></td>
         <td class="required"></td>

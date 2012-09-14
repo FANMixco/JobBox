@@ -3,21 +3,21 @@
 <table>
     <tr>
         <td>
-            <?php echo form_label("Municipio"); ?>
+            <?php echo form_label($this->lang->line('lbl_city')); ?>
         </td>
         <td><?php echo form_input('ncity',$this->input->post('ncity')); ?></td>
         <td class="required"></td>
     </tr>
     <tr>
         <td>
-            <?php echo form_label("Departamento"); ?>
+            <?php echo form_label($this->lang->line('lbl_state')); ?>
         </td>
         <td><?php echo form_dropdown('state',$states,$this->input->post('state')); ?></td>
         <td class="required"></td>
     </tr>
     <tr>
         <td>
-            <?php echo form_label("Código Postal"); ?>
+            <?php echo form_label($this->lang->line('lbl_zip_code')); ?>
         </td>
         <td><?php echo form_input('zipcode',$this->input->post('zipcode')); ?></td>
     </tr>
