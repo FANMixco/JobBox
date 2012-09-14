@@ -51,6 +51,9 @@ $lang['txt_admin_jobs']           = "Administrar Bolsa de Trabajo";
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
 //Users
+$lang['lbl_completed_years']             	  = "Num. de A&ntilde;os completados:";
+$lang['lbl_title_years']             	  = "Num. de A&ntilde;os de Titulaci&oacute;n:";
+$lang['lbl_speciality']             	  = "Especialidad:";
 $lang['txt_personal_info']        = "Datos Personales";
 $lang['txt_docs']	          	  = "Documentaci&oacute;n";
 $lang['txt_other_info']	          = "Otra Informaci&oacute;n";
@@ -189,7 +192,9 @@ $lang['lbl_profile']        	  = "Perfil:";
 $lang['lbl_change_pass']       	  = "Cambiar Contrase&ntilde;a:";
 $lang['lbl_apply']       		  = "Aplicar Trabajos:";
 $lang['lbl_academic_levels']      = "Niveles Educativos:";
+$lang['lbl_academic_level']      = "Nivel Educativo:";
 $lang['lbl_academic_majors']      = "Carreras:";
+$lang['lbl_academic_major']      = "T&iacute;tulo:";
 $lang['lbl_countries']       	  = "Pa&iacute;ses:";
 $lang['lbl_states']       		  = "Departamentos:";
 $lang['lbl_cities']       		  = "Ciudades:";

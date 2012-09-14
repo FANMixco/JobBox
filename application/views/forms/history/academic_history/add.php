@@ -1,18 +1,17 @@
-<h1><?php echo $title; ?></h1><hr/><br/>
 <?php echo form_open(); ?>
 <table>
     <tr>
         <td>
             <?php echo form_label($this->lang->line('lbl_start_date')); ?>
         </td>
-        <td><?php echo form_input('start_date',$this->input->post('start_date')); ?></td>
+        <td><?php echo form_input('start_date',$this->input->post('start_date'), 'class="datepicker"'); ?></td>
         <td class="required"></td>
     </tr>
     <tr>
         <td>
             <?php echo form_label($this->lang->line('lbl_end_date')); ?>
         </td>
-        <td><?php echo form_input('end_date',$this->input->post('end_date')); ?></td>
+        <td><?php echo form_input('end_date',$this->input->post('end_date'), 'class="datepicker"'); ?></td>
     </tr>
     <tr>
         <td>
@@ -66,3 +65,6 @@
 <?php echo validation_errors('<h5 class="message message-error" style="max-width:45%">','</h5>'); ?>
 <br/>
 <?php echo form_close(); ?>
+<script type="text/javascript">
+	$( ".datepicker" ).datepicker({ dateFormat: "dd/mm/yy" });
+</script>

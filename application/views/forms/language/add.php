@@ -5,7 +5,7 @@
         <td>
             <?php echo form_label($this->lang->line('lbl_language')); ?>
         </td>
-        <td><?php echo form_input('job_language',$this->input->post('job_language')); ?></td>
+        <td><?php echo form_input('language',$this->input->post('language')); ?></td>
         <td class="required"></td>
     </tr>
     <tr>

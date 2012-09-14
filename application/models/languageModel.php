@@ -26,6 +26,11 @@ class languageModel extends CI_Model{
 		$this->db->update(languages,array(status => 0));
 		return $this->db->affected_rows();
 	}        
+
+        function registerLanguage($languageInfo){
+		$this->db->insert(languages,$languageInfo);
+		return $this->db->insert_id();
+	}
 }
 
 

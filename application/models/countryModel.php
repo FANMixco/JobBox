@@ -14,7 +14,7 @@ class CountryModel extends CI_Model{
 	**																			**
 	**--------------------------------------------------------------------------*/
 	function getCountries(){
-		return $this->db->get_where('countries',array(status => 1))->result_array();
+		return $this->db->get_where('countries ORDER BY country',array(status => 1))->result_array();
 	}
 	
 	/*--------------------------------------------------------------------------**

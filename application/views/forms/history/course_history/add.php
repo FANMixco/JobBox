@@ -1,4 +1,3 @@
-<h1><?php echo $title; ?></h1><hr/><br/>
 <?php echo form_open(); ?>
 <table>
     <tr>
@@ -27,6 +26,12 @@
         </td>
         <td><?php echo form_dropdown('school',$schools,$this->input->post('school')); ?></td>
         <td class="required"></td>
+    </tr>
+    <tr>
+        <td>
+            <?php echo form_label($this->lang->line('lbl_hours')); ?>
+        </td>
+        <td><?php echo form_input('hours',$this->input->post('hours')); ?></td>
     </tr>
     <tr>
         <td>
