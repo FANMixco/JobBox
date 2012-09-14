@@ -1,4 +1,3 @@
-<h1><?php echo $title; ?></h1><hr/><br/>
 <?php echo form_open(); ?>
 <table>
     <tr>
@@ -38,9 +37,9 @@
         </td>
         <td><?php
                  $options=array(
-                     'Tiempo Completo'=>'Tiempo Completo',
-                     'Medio Completo'=>'Medio Completo',
-                     'Por temporada'=>'Por temporada'                     
+                     'Casa'=>'Casa',
+                     'Oficina'=>'Oficina',
+                     'Móvil'=>'Móvil'                     
                  );
                  echo form_dropdown('type_1',$options,$this->input->post('type_1')); 
              ?></td>
@@ -75,9 +74,9 @@
         </td>
         <td><?php
                  $options=array(
-                     'Tiempo Completo'=>'Tiempo Completo',
-                     'Medio Completo'=>'Medio Completo',
-                     'Por temporada'=>'Por temporada'                     
+                     'Casa'=>'Casa',
+                     'Oficina'=>'Oficina',
+                     'Móvil'=>'Móvil'                     
                  );
                  echo form_dropdown('type_2',$options,$this->input->post('type_2')); 
              ?></td>

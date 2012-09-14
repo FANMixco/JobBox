@@ -28,7 +28,7 @@ class CourseModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function registerCourseHistory($userInfo){
-		$this->db->insert(course_history,$userInfo);
+		$this->db->insert('Course_History',$userInfo);
 		return $this->db->insert_id();
 	}
         

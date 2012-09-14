@@ -28,7 +28,7 @@ class AcademicModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function registerAddressHistory($userInfo){
-		$this->db->insert(address_history,$userInfo);
+		$this->db->insert('Address_History',$userInfo);
 		return $this->db->insert_id();
 	}
         

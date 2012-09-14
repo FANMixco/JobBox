@@ -16,20 +16,14 @@
     </tr>
     <tr>
         <td>
-            <?php echo form_label($this->lang->line('lbl_email')); ?>
-        </td>
-        <td><?php echo form_input('email',$this->input->post('email')); ?></td>
-    </tr>
-    <tr>
-        <td>
             <?php echo form_label($this->lang->line('lbl_type')); ?>
         </td>
         <td>
         <td><?php
                  $options=array(
-                     'Tiempo Completo'=>'Tiempo Completo',
-                     'Medio Completo'=>'Medio Completo',
-                     'Por temporada'=>'Por temporada'                     
+                     'Casa'=>'Casa',
+                     'Oficina'=>'Oficina',
+                     'Móvil'=>'Móvil'                     
                  );
                  echo form_dropdown('type',$options,$this->input->post('type')); 
              ?></td>

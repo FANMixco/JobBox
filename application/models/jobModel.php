@@ -88,7 +88,12 @@ class JobModel extends CI_Model{
 	function getJobAreas(){
 		return $this->db->get_where('job_areas',array(status => 1))->result_array();
 	}
-	
+
+	function getJobSectors(){
+		return $this->db->get_where('job_sectors',array(status => 1))->result_array();
+	}
+        
+        
 	/*--------------------------------------------------------------------------**
 	**  apply ==> Creates an user appplication									**
 	**	$data - data of the application											**

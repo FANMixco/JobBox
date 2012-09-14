@@ -20,7 +20,7 @@ class AcademicLevelModel extends CI_Model{
         
 	function delete($academic_level){
 		$this->db->where(array(idAcademic_Level => $academic_level));
-		$this->db->update(honorifics,array(status => 0));
+		$this->db->update('Academic_Levels',array(status => 0));
 		return $this->db->affected_rows();
 	}        
 }

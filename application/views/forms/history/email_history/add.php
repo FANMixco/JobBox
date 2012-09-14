@@ -1,4 +1,3 @@
-<h1><?php echo $title; ?></h1><hr/><br/>
 <?php echo form_open(); ?>
 <table>
     <tr>

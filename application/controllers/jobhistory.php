@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Coursehistory extends CI_Controller {
+class Jobhistory extends CI_Controller {
 
 	/*--------------------------------------------------------------------------*/
 	/*  __construct ==> Call the Model constructor 								*/
@@ -22,11 +22,11 @@ class Coursehistory extends CI_Controller {
 		if ($this->input->post()):
 			//load the validation library
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('course',$this->lang->line('start_date'),'required|valid_date');			
 			$this->form_validation->set_rules('startDate',$this->lang->line('lbl_start_date'),'required|valid_date');			
 			$this->form_validation->set_rules('endDate',$this->lang->line('lbl_end_date'),'valid_date');
-			$this->form_validation->set_rules('school',$this->lang->line('lbl_school'),'required');
-			$this->form_validation->set_rules('country',$this->lang->line('lbl_country'),'required');
+			$this->form_validation->set_rules('company',$this->lang->line('lbl_company'),'required');
+			$this->form_validation->set_rules('job_area',$this->lang->line('lbl_job_area'),'required');
+			$this->form_validation->set_rules('job_sector',$this->lang->line('lbl_job_sector'),'required');
                         if ($this->form_validation->run()):
 				$this->_set_user();
 				redirect('user/registered');
@@ -35,31 +35,35 @@ class Coursehistory extends CI_Controller {
 		//load the resources
 		$this->load->model('schoolModel');
 		$this->load->model('countryModel');
+		$this->load->model('jobModel');
 		$this->load->helper('js');
 		$data = array(
 			'title'		=> $this->lang->line('txt_register'),
-			'mainView'	=> 'forms/history/course_history/add',
+			'mainView'	=> 'forms/history/job_history/add',
 			'schools'	=> getDropDown($this->schoolModel->getSchools(),'idSchool','School'),
-			'academic_levels'	=> getDropDown($this->countryModel->getAcademicLevels(),'idCountry','Country'),
+			'countries'	=> getDropDown($this->countryModel->getCountries(),'idCountry','Country'),
+			'job_areas'	=> getDropDown($this->jobModel->getJobAreas(),'idJob_Area','Job_Area'),
+			'job_sectors'	=> getDropDown($this->jobModel->getJobSectors(),'idJob_Sector','Job_Sector'),
 			'scripts'	=> jQuery_UI()			
 		);
 		$this->load->view('template/wrapper',$data);
 	}
 
         
-        function _set_coursehistory(){ 
+        function _set_jobhistory(){ 
             $data = array(
                 'start_date'		=> $this->input->post('start_date'),
                 'end_date'		=> $this->input->post('end_date'),
-                'hours'		=> $this->input->post('hours'),
-                'school'		=> $this->input->post('school'),
-                'scholarship'		=> $this->input->post('scholarship'),
                 'country'		=> $this->input->post('country'),
-                'scholarship'		=> $this->input->post('scholarship'),
-                'user'		=> $this->session->userdata('idUser'),
-                'comments'		=> $this->input->post('comments')
+                'employee_number'		=> $this->input->post('employee_number'),
+                'salary'		=> $this->input->post('salary'),
+                'activities'		=> $this->input->post('activities'),
+                'boss'		=> $this->input->post('boss'),
+                'boss_position'		=> $this->input->post('boss_position'),
+                'address'		=> $this->input->post('address'),
+                'idUser'		=> $this->session->userdata('idUser')
             );
             
-            return $this->academicHistoryModel->registerAcademicHistory($data);
+            return $this->jobHistoryModel->registerJobHistory($data);
         }       
 }        

@@ -22,11 +22,11 @@ class Academichistory extends CI_Controller {
 		if ($this->input->post()):
 			//load the validation library
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('startDate',$this->lang->line('start_date'),'required|valid_date');			
-			$this->form_validation->set_rules('endDate',$this->lang->line('end_date'),'valid_date');
-			$this->form_validation->set_rules('school',$this->lang->line('school'),'required');
-			$this->form_validation->set_rules('academicLevel',$this->lang->line('academic_level'),'required');
-			$this->form_validation->set_rules('academicMajor',$this->lang->line('academic_major'),'required');
+			$this->form_validation->set_rules('startDate',$this->lang->line('lbl_start_date'),'required|valid_date');			
+			$this->form_validation->set_rules('endDate',$this->lang->line('lbl_end_date'),'valid_date');
+			$this->form_validation->set_rules('school',$this->lang->line('lbl_school'),'required');
+			$this->form_validation->set_rules('academicLevel',$this->lang->line('lbl_academic_level'),'required');
+			$this->form_validation->set_rules('academicMajor',$this->lang->line('lbl_academic_major'),'required');
                         if ($this->form_validation->run()):
 				$this->_set_user();
 				redirect('user/registered');
@@ -49,7 +49,7 @@ class Academichistory extends CI_Controller {
 	}
 
         
-        function _set_academichistory($user=NULL){ 
+        function _set_academichistory(){ 
             $data = array(
                 'start_date'		=> $this->input->post('start_date'),
                 'end_date'		=> $this->input->post('end_date'),
@@ -62,6 +62,6 @@ class Academichistory extends CI_Controller {
                 'idUser'		=> $this->session->userdata('idUser')
             );
             
-            return ($user==NULL)?$this->academicHistoryModel->registerAcademicHistory($data):$this->academicHistoryModel->updateAcademicHistory($user,$data);
+            return $this->academicHistoryModel->registerAcademicHistory($data);
         }       
 }        

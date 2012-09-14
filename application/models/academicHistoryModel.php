@@ -6,7 +6,7 @@
 /*	1 => Active 															*/
 /*																			*/
 /*--------------------------------------------------------------------------*/
-class AcademicModel extends CI_Model{
+class AcademicHistoryModel extends CI_Model{
     	/*--------------------------------------------------------------------------*/
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
@@ -28,7 +28,7 @@ class AcademicModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function registerAcademicHistory($userInfo){
-		$this->db->insert(academic_history,$userInfo);
+		$this->db->insert('Academic_History',$userInfo);
 		return $this->db->insert_id();
 	}
         

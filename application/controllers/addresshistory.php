@@ -47,14 +47,15 @@ class Addresshistory extends CI_Controller {
 	}
 
         
-        function _set_academichistory($user=NULL){ 
+        function _set_addresshistory(){ 
             $data = array(
                 'start_date'		=> $this->input->post('start_date'),
                 'end_date'		=> $this->input->post('end_date'),
                 'address'		=> $this->input->post('address'),
-                'city'                  => $this->input->post('city')
+                'city'                  => $this->input->post('city'),
+                'idUser'		=> $this->session->userdata('idUser')
             );
             
-            return ($user==NULL)?$this->academicHistoryModel->registerAddressHistory($data):$this->academicHistoryModel->updateAddressHistory($user,$data);
+            return $this->academicHistoryModel->registerAddressHistory($data);
         }       
 }        
