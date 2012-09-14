@@ -18,6 +18,15 @@ function jlist(){
 	return $jlist;	
 }
 
+function charts(){
+	$charts ='
+	<!-- highcharts.js -->
+	<script type="text/javascript" src="'.base_url('resources/highcharts/highcharts.js').'"></script>
+	<script type="text/javascript" src="'.base_url('resources/highcharts/exporting.js').'"></script>
+	';
+	return $charts;	
+}
+
 function jUpload(){	
 	$jUpload = '
 		<!-- jUpload -->

@@ -80,6 +80,20 @@ class JobModel extends CI_Model{
 	}
 	
 	/*--------------------------------------------------------------------------**
+	**  getJobsPerArea ==> gets all the jobs ordered by most recent				**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getJobsPerArea(){
+		$sql = "select ja.Job_Area, count(a.idJob) total from applications a, jobs j, job_areas ja
+			Where a.idJob = j.idJob
+			AND j.idJob_Area = ja.idJob_Area
+			GROUP BY ja.idJob_Area";
+		return $this->db->query($sql)->result_array();
+	}
+	
+	/*--------------------------------------------------------------------------**
 	**  getJobAreas ==> gets all the job areas									**
 	**																			**
 	**	RETURNS: Result array													**

@@ -56,6 +56,10 @@ $lang['txt_add_job_profile']      = "A&ntilde;adir a un proceso de selecci&oacut
 /*--------------------------------------------------------------------------------------------------------------------------*/
 $lang['txt_actions']        	  = "Acciones";
 $lang['txt_profiles']        	  = "Perfiles";
+$lang['txt_current_jobs']      	  = "Total de Procesos de Selecci&oacute;n Vigentes";
+$lang['txt_app_jobs'] 	     	  = "Aplicaciones por Proceso de Selecci&oacute;n";
+$lang['txt_report_1'] 	     	  = "Aplicaciones por Area";
+
 
 //Users
 $lang['lbl_completed_years']             	  = "Num. de A&ntilde;os completados:";

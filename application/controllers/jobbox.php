@@ -68,16 +68,21 @@ class Jobbox extends CI_Controller {
 	**--------------------------------------------------------------------------*/
 	public function admin(){
 		if ($this->session->userdata('Credentials')!=Credentials) redirect('logout');
+		$this->load->helper('js');
 		switch($this->session->userdata(Level)){
 			case 1:
+				$this->load->model('jobModel');
 				$data = array(
 					'title'		=>	$this->lang->line('txt_dashboard'),
-					'mainView'	=> 	'forms/dashboard'
+					'mainView'	=> 	'forms/dashboard',
+					'scripts'	=>  jlist().charts(),
+					'jobs'		=> 	$this->jobModel->getRecentJobs(),
+					'apps'		=> 	$this->jobModel->getJobApps(),
+					'jPerArea'	=>  $this->jobModel->getJobsPerArea()
 				);				
 				break;
 			case 2:
-			default:
-				$this->load->helper('js');
+			default:				
 				$this->load->model('userModel');
 				$data = array(
 					'title'		=>	$this->lang->line('txt_my_profile'),
