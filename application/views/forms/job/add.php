@@ -1,3 +1,10 @@
+<script src=<?php echo base_url('scripts/WYSWYG/nicEdit.js') ?>></script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(function() {
+            new nicEditor({buttonList : ['bold','italic','underline','strikethrough','left','center','right','justify','ol','ul','fontFamily','fontSize','indent','outdent','forecolor','bgcolor','subscript','superscript','link','unlink']}).panelInstance('position_name');
+    });
+</script>
+	
 <?php echo $title; ?></h1><hr/><br/>
 <?php echo form_open(); ?>
 <table>
