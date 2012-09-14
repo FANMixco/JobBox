@@ -1,6 +1,6 @@
 <?php
 
-class ReligionModel extends CI_Model{
+class languageModel extends CI_Model{
 	/*--------------------------------------------------------------------------*/
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
@@ -13,16 +13,19 @@ class ReligionModel extends CI_Model{
 	**	RETURNS: Result array													**
 	**																			**
 	**--------------------------------------------------------------------------*/
-	function getReligions(){
-		return $this->db->get_where('religions',array(status => 1))->result_array();
+	function getLanguage(){
+		return $this->db->get_where('languages',array(status => 1))->result_array();
+	}
+
+        function getLanguageLevel(){
+		return $this->db->get_where('language_levels',array(status => 1))->result_array();
 	}
         
-	function delete($religion){
-		$this->db->where(array(idReligion => $religion));
-		$this->db->update(religions,array(status => 0));
+	function delete($language){
+		$this->db->where(array(idLanguage => $language));
+		$this->db->update(languages,array(status => 0));
 		return $this->db->affected_rows();
-	}
-        
+	}        
 }
 
 

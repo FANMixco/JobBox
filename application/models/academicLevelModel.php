@@ -1,6 +1,6 @@
 <?php
 
-class ReligionModel extends CI_Model{
+class AcademicLevelModel extends CI_Model{
 	/*--------------------------------------------------------------------------*/
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
@@ -8,22 +8,21 @@ class ReligionModel extends CI_Model{
 	function __construct(){parent::__construct();}	
 	
 	/*--------------------------------------------------------------------------**
-	**  getReligions ==> gets all the religions 								**
+	**  getHonorifics ==> gets all the honorifics 								**
 	**																			**
 	**	RETURNS: Result array													**
 	**																			**
 	**--------------------------------------------------------------------------*/
-	function getReligions(){
-		return $this->db->get_where('religions',array(status => 1))->result_array();
+	function getAcademicLevels(){
+		return $this->db->get_where('academic_levels',array(status => 1))->result_array();
 	}
-        
-	function delete($religion){
-		$this->db->where(array(idReligion => $religion));
-		$this->db->update(religions,array(status => 0));
-		return $this->db->affected_rows();
-	}
-        
-}
 
+        
+	function delete($academic_level){
+		$this->db->where(array(idAcademic_Level => $academic_level));
+		$this->db->update(honorifics,array(status => 0));
+		return $this->db->affected_rows();
+	}        
+}
 
 ?>

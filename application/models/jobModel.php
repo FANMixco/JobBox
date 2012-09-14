@@ -67,6 +67,14 @@ class JobModel extends CI_Model{
 		$this->db->insert('jobs',$data);
 		return $this->db->insert_id();
 	}
+
+        
+	function delete($job){
+		$this->db->where(array(idJob => $job));
+		$this->db->update(jobs,array(status => 0));
+		return $this->db->affected_rows();
+	}
+        
 }
 
 
