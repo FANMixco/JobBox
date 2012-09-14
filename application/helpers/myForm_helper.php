@@ -348,8 +348,8 @@ function printTable($searchText,$headers,$data,$indexes,$linkData = NULL,$divNam
 					//Just write the fields				
 					//foreach($custom['fields'] as $field):						
 						$fields = $custom['fields'];
-						$keyField = ($fields[3]!=NULL)?$fields[3]:'';
-						$tableData .= '<td><a class="'.$fields[0].'" href="'.base_url($fields[2].encodeID($record[$keyField])).'">'.$fields[1].'</a></td>';
+						$keyField = ($fields[3]!=NULL)?$record[$fields[3]]:'';
+						$tableData .= '<td><a class="'.$fields[0].'" href="'.base_url($fields[2].'/'.encodeID($keyField)).'">'.$fields[1].'</a></td>';
 					//endforeach;
 				endif;
 			endif; 			

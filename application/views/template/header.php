@@ -73,6 +73,8 @@
 		<li>Administrar</li><hr />
 	<?php
 		echo '<li>'.anchor(base_url('job'),$this->lang->line('menu_job_bag')).'</li>';
+		echo '<li>'.anchor(base_url('job/applications'),$this->lang->line('txt_apps')).'</li>';
+		echo '<li>'.anchor(base_url('profiles'),$this->lang->line('txt_profiles')).'</li>';
 	/*echo '
 			<li><a href='.base_url("academic_levels/").'>Niveles Educativos</a></li>
 			<li><a href='.base_url("academic_majors/").'>Carreras</a></li>
