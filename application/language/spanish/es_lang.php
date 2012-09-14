@@ -20,6 +20,9 @@ $lang['txt_login']	              = "Iniciar Sesi&oacute;n";
 $lang['txt_register']             = "Registrarse";
 $lang['txt_enter'] 	              = "Entrar";
 $lang['txt_send'] 	              = "Enviar";
+$lang['txt_save'] 	              = "Guardar";
+$lang['txt_advanced_search'] 	              = "B&uacute;squeda Avanzada";
+$lang['txt_search'] 	              = "Buscar";
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
 /* TEXTS 						 																							*/
@@ -158,7 +161,6 @@ $lang['lbl_user_levels']       	  = "Niveles de Usuarios:";
 /*--------------------------------------------------------------------------------------------------------------------------*/
 $lang['msg_congrats']             = "Felicidades!";
 $lang['msg_no_jobs']              = "No existe ninguna plaza de trabajo.";
-$lang['msg_no_login']             = "El usuario o la contrase&ntilde;a son incorrectos.";
 $lang['msg_register']             = "Registrese en JobBox y podr&aacute; aplicar a todas las plazas del sistema, participar en procesos de selecci&oacute;n, subir su perfil y darse a conocer en el medio profesional.";
 $lang['msg_registered']           = "Felicidades! Su cuenta ha sido creada y est&aacute; lista para usarse. Recuerde actualizar su perfil una vez ingrese al sistema.";
 

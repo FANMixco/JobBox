@@ -8,13 +8,15 @@
         <td><?php echo form_input('ncountry',$this->input->post('ncountry')); ?></td>
         <td class="required"></td>
     </tr>
-    <td colspan="2"><br/>
-        <?php echo anchor('admin',$this->lang->line('txt_go_back'),array('class' => 'btn')); ?>
-            <button type="submit" class="btn-black">
-            	<i class="icon icon-ok"></i>
-            	<?php echo $this->lang->line('txt_save'); ?>            	
-            </button>
-    </td>
+    <tr>
+        <td colspan="2"><br/>
+            <?php echo anchor('admin',$this->lang->line('txt_go_back'),array('class' => 'btn')); ?>
+                <button type="submit" class="btn-black">
+                    <i class="icon icon-ok"></i>
+                    <?php echo $this->lang->line('txt_save'); ?>            	
+                </button>
+        </td>
+    </tr>
 </table>
 <?php echo validation_errors('<h5 class="message message-error" style="max-width:45%">','</h5>'); ?>
 <br/>
