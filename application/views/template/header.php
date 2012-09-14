@@ -5,6 +5,8 @@
 <title><?php echo $this->lang->line('jobbox').' - '.$title; ?></title>
 <!-- Styles -->
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('styles/template.css'); ?>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('styles/buttons.css'); ?>" />
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('styles/shared.css'); ?>" />
 <!-- Scripts -->
 <script type="text/javascript" src="<?php echo base_url('scripts/jquery-1.7.2.min.js'); ?>" ></script>
 <?php if (isset($scripts)) echo $scripts; ?>

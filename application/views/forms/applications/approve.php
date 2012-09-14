@@ -61,4 +61,6 @@
 	</tr>
 </table>
 <?php echo form_close(); ?>
+
+<?php echo anchor(base_url('applications/view').'/'.encodeID($app['idJob']),$this->lang->line('txt_go_back')); ?>
 <?php endif; ?>

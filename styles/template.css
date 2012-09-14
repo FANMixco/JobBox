@@ -175,37 +175,7 @@ ul#nav li a{
 }
 
 ul#nav li, ul#nav li a{color:white;font-weight:bold;}
-/*Table!*/
-table.data-table{border-collapse:separate;}	
-table.data-table thead tr{background-color:#333334;}
-table.data-table th{background-color:#333334;color:white;text-align:center;}
-table.data-table th,table.data-table td{padding: 4px 8px 4px ;}
-table.data-table td{border-right:1px solid #bdbdbd;border-bottom:1px solid #bdbdbd;text-align:left;}
-table.data-table td a{color: #a7a7a7;}
-table.data-table td a:hover{color: #022d5b;}
-table.data-table tbody tr{
-	/*Transitions*/
-	transition:background-color 1s;
-	-moz-transition:background 0.5s; /* Firefox 4 */
-	-webkit-transition:background 0.5s; /* Safari and Chrome */
-	-o-transition:background 0.5s; /* Opera */
-}
-table.data-table tbody tr:hover{background-color:#F4F4F4;}
-/*<a> icons*/
-a.icon{
-	padding-left: 20px;
-	/*Transitions*/
-	transition:color 1s,background-color 1s;
-	-moz-transition:color 0.5s,background 0.5s; /* Firefox 4 */
-	-webkit-transition:color 0.5s,background 0.5s; /* Safari and Chrome */
-	-o-transition:color 0.5s,background 0.5s; /* Opera */
-}
-a.del{background:url("../images/icons/delete.png") no-repeat;}
-a.del:hover{background:url("../images/icons/delete-hover.png") no-repeat;}
-a.edit{background:url("../images/icons/edit.png") no-repeat;}
-a.edit:hover{background:url("../images/icons/edit-hover.png") no-repeat;}
-a.view{background:url("../images/icons/view.png") no-repeat;}
-a.view:hover{background:url("../images/icons/view-hover.png") no-repeat;}
+
 /* Classes */
 .required{color:#6F0000;}
 .required:after{content:"*";}

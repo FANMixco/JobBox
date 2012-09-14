@@ -87,6 +87,22 @@
 	</div>
 </div>
 
+<?php if ($this->session->userdata(Level)==1): ?>
+	<br/>
+	<a id="addTo" href="javascript:void(0)" class="right"><?php echo $this->lang->line('txt_add_job_profile'); ?></a><br/>
+	<div id="addTo-panel" class="right" style="display:none;">
+		<?php echo form_open('job/addTo','',array('user' => encodeID($user[idUser]))); ?>
+			<?php echo form_dropdown('job',$jobs); ?>
+			<?php echo form_submit(array('name' => 'addTo', 'value' => $this->lang->line('txt_send'))); ?>
+		<?php echo form_close(); ?>
+	</div>
+	<script>
+		$('#addTo').click(function(){
+			$('#addTo-panel').show('fast');
+		});
+	</script>
+<?php endif; ?>
+
 <script>
 $(function() {
 	$( "#tabs" ).tabs();
