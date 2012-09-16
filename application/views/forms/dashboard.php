@@ -72,5 +72,7 @@ echo printTable($this->lang->line('txt_search'),
             }]
 		});
     });   
+        
 });
+
 </script>

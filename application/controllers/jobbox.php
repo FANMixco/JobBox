@@ -37,7 +37,7 @@ class Jobbox extends CI_Controller {
 				$this->session->set_userdata(name,$user['First_Name'].' '.$user['Last_Name_1']);
 				$this->session->set_userdata('Credentials',Credentials);
 				//Redirect!
-				if ($this->session->userdata('job'))redirect('job/view/'.$job);
+				if ($this->session->userdata('job'))redirect('job/view/'.$this->session->userdata('job'));
 				redirect('admin');
 			else:
 				$data['error'] = 1;
@@ -78,21 +78,37 @@ class Jobbox extends CI_Controller {
 					'scripts'	=>  jlist().charts(),
 					'jobs'		=> 	$this->jobModel->getRecentJobs(),
 					'apps'		=> 	$this->jobModel->getJobApps(),
-					'jPerArea'	=>  $this->jobModel->getJobsPerArea()
+					'jPerArea'	=>  $this->jobModel->getJobsPerArea(),
+                                        'APerMonth'	=>  $this->jobModel->getMonthApps(),                                    
 				);				
 				break;
 			case 2:
 			default:				
 				$this->load->model('userModel');
+                                $this->load->model('academicHistoryModel');
+                                $this->load->model('courseHistoryModel');
+                                $this->load->model('jobHistoryModel');
+                                $this->load->model('emailHistoryModel'); 
+                                $this->load->model('telephoneHistoryModel'); 
+                                $this->load->model('addressHistoryModel'); 
+                                $this->load->model('contactModel');                                 
 				$data = array(
 					'title'		=>	$this->lang->line('txt_my_profile'),
 					'mainView'	=> 	'forms/profile',
-					'scripts'	=>  jQuery_UI(),
-					'user'		=>  $this->userModel->getUser($this->session->userdata(idUser))
+					'scripts'	=>  jQuery_UI().jlist(),
+					'user'		=>  $this->userModel->getUser($this->session->userdata(idUser)),
+                                        'acHistory'     =>  $this->academicHistoryModel->getAcademicHistoryModel($this->session->userdata(idUser)),
+                                        //'acHistory'     =>  $this->academicHistoryModel->getAcademicHistoryModel($this->session->userdata(idUser)),
+                                        'jHistory'     =>  $this->jobHistoryModel->getJobHistoryModel($this->session->userdata(idUser)),
+                                        'emailHistory'     =>  $this->emailHistoryModel->getEmailcHistoryModel($this->session->userdata(idUser)),
+                                        'telHistory'    => $this->telephoneHistoryModel->getTelephoneHistoryModel($this->session->userdata(idUser)),
+                                        'addHistory'    => $this->addressHistoryModel->getAddressHistoryModel($this->session->userdata(idUser)),
+                                        'contactHistory'    => $this->contactModel->getContactHistoryModel($this->session->userdata(idUser)),
+                                        'courseHistory'    => $this->courseHistoryModel->getCourseHistoryModel($this->session->userdata(idUser))
 				);
 				break;
-		}
-		$this->load->view('template/wrapper',$data);
+		}		
+                $this->load->view('template/wrapper',$data);
 	}
 }
 

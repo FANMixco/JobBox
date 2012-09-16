@@ -19,7 +19,7 @@ class JobHistoryModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function getJobHistoryModel($user){
-		return $this->db->get_where('job_history_vw',array(idUser => $user,status => 1))->row_array();
+		return $this->db->get_where('job_history_vw',array(idUser => $user))->result_array();
 	}
 
 	/*--------------------------------------------------------------------------*/

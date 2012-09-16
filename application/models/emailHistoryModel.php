@@ -6,7 +6,7 @@
 /*	1 => Active 															*/
 /*																			*/
 /*--------------------------------------------------------------------------*/
-class AcademicModel extends CI_Model{
+class EmailHistoryModel extends CI_Model{
     	/*--------------------------------------------------------------------------*/
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
@@ -19,7 +19,7 @@ class AcademicModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function getEmailcHistoryModel($user){
-		return $this->db->get_where('academic_history_vw',array(idUser => $user,status => 1))->row_array();
+		return $this->db->get_where('email_history_vw',array(idUser => $user))->result_array();
 	}
 
 	/*--------------------------------------------------------------------------*/

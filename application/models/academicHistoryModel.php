@@ -19,7 +19,7 @@ class AcademicHistoryModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function getAcademicHistoryModel($user){
-		return $this->db->get_where('academic_history_vw',array(idUser => $user,status => 1))->row_array();
+		return $this->db->get_where('academic_history_vw',array(idUser => $user))->result_array();
 	}
 
 	/*--------------------------------------------------------------------------*/

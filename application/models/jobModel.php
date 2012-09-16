@@ -33,6 +33,20 @@ class JobModel extends CI_Model{
 			Group By a.idJob";
 		return $this->db->query($sql)->result_array();
 	}
+        
+        /*--------------------------------------------------------------------------**
+	**  getMonthApps ==> gets the total apps for each job							**
+	**																			**
+	**	RETURNS: Result array													**
+	**																			**
+	**--------------------------------------------------------------------------*/
+	function getMonthApps(){
+		$sql = "Select COUNT(idJob), 
+                    DATE_FORMAT(App_Date,'%m') month 
+                    from applications
+                    group by month";
+		return $this->db->query($sql)->result_array();
+	}
 	
 	/*--------------------------------------------------------------------------**
 	**  getJobApps ==> gets the applications for a job							**
@@ -125,6 +139,7 @@ class JobModel extends CI_Model{
 	}
 	
 	function hasApplied($user,$job){
+                if ($user==NULL) return 0;
 		return $this->db->get_where('applications',array(idUser => $user,'idJob'=> $job))->num_rows();
 	}
 	

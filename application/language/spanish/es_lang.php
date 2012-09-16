@@ -42,6 +42,7 @@ $lang['txt_go_back']              = "&laquo; Regresar";
 $lang['txt_apply']             	  = "Aplicar";
 $lang['txt_edit']             	  = "Editar";
 $lang['txt_view']             	  = "Ver";
+$lang['txt_new']             	  = "Nuevo";
 
 //Admin
 $lang['txt_admin_jobs']           = "Administrar Bolsa de Trabajo";
@@ -59,6 +60,7 @@ $lang['txt_profiles']        	  = "Perfiles";
 $lang['txt_current_jobs']      	  = "Total de Procesos de Selecci&oacute;n Vigentes";
 $lang['txt_app_jobs'] 	     	  = "Aplicaciones por Proceso de Selecci&oacute;n";
 $lang['txt_report_1'] 	     	  = "Aplicaciones por Area";
+$lang['txt_report_2'] 	     	  = "Aplicaciones por Mes";
 
 
 //Users
@@ -78,12 +80,19 @@ $lang['txt_kgs']		          = "Kgs";
 
 $lang['txt_advanced_search']      = "B&uacute;squeda Avanzada";
 $lang['txt_dashboard']      	  = "DashBoard";
+$lang['txt_emails']      	  = "Correos Electr&oacute;nicos";
+$lang['txt_addresses']      	  = "Direcciones";
+$lang['txt_phones']      	  = "Tel&eacute;fonos";
+$lang['txt_courses']      	  = "Cursos";
+$lang['txt_education']      	  = "Formaci&oacute;n Profesional";
 
 //Mi perfil
 $lang['txt_my_profile']		      = "Mi Perfil";
 $lang['txt_my_info']		      = "Mi Informaci&oacute;n";
 $lang['txt_ac_history']		      = "Historial Acad&eacute;mico";
 $lang['txt_job_history']	      = "Experiencia Profesional";
+$lang['txt_contact_history']	      = "Contactos";
+$lang['txt_references']	      = "Referencias";
 
 //Jobs
 $lang['txt_new_job']	      	  = "Nueva Plaza de Trabajo";
@@ -186,14 +195,17 @@ $lang['lbl_company']       		  = "Compa&ntilde;ia:";
 $lang['lbl_job']       	  = "Trabajo:";
 $lang['lbl_job_sector']       	  = "Sector:";
 $lang['lbl_telephone']       	  = "N&uacute;mero de Tel&eacute;fono:";
-$lang['lbl_employee_number']      = "Num&uacute;ero de Empleados:";
+$lang['lbl_employee_number']      = "N&uacute;mero de Empleados:";
 $lang['lbl_start_position']       = "Puesto inicial:";
 $lang['lbl_end_position']         = "Puesto final:";
 $lang['lbl_activities']       	  = "Actividades:";
 $lang['lbl_applied_job']       	  = "Plaza a la que aplica:";
 $lang['lbl_boss']       		  = "Jefe Inmediato:";
 $lang['lbl_boss_position']        = "Cargo del Jefe:";
+$lang['lbl_start_position']        = "Cargo Inicial:";
+$lang['lbl_end_position']        = "Cargo Final:";
 $lang['lbl_reason']       		  = "Raz&oacute;n:";
+
 
 //Countries
 $lang['lbl_country']       		  = "Pa&iacute;s:";
@@ -247,4 +259,11 @@ $lang['msg_registered']           = "Felicidades! Su cuenta ha sido creada y est
 /*--------------------------------------------------------------------------------------------------------------------------*/
 $lang['header_apps']       	  	  = array('Plaza','# de Aplicaciones');
 $lang['header_app']       	  	  = array('Aplicante','Fecha de Aplicaci&oacute;n');
+$lang['header_ac_history']       	  = array('Titulo','Instituci&oacute;n','Nivel Acad&eacute;mico','Inicio','Fin');
+$lang['header_course_history']       	  = array('Curso','Instituci&oacute;n','Horas','Becas y Premios');
+$lang['header_email_history']       	  = array('e-mail','Tipo','Fecha de Inicio','Fecha de Fin');
+$lang['header_tel_history']       	  = array('Tel&eacute;fono','C&oacute;digo del Pa&iacute;s','C&oacute;digo Internacional','C&oacute;digo de Provincia','Tipo');
+$lang['header_add_history']       	  = array('Direcci&oacute;n','Ciudad','Fecha de Inicio','Fecha de Fin');
+$lang['header_contact_history']       	  = array('Contacto','Ciudad','Direcci&oacute;n','Telephone_1');
+$lang['header_job_history']       	  = array('Cargo Inicial','Cargo Final','Empresa','Area');
 ?>

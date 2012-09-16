@@ -9,7 +9,7 @@
 	/*Border*/
 	border:0;	
 	/*Font-related*/
-	color:white;
+	color:white !important;
 	/*Misc*/	
 	cursor:pointer;
 	padding:6px 30px;
@@ -29,7 +29,7 @@ a.btn:hover,a.btn-black:hover{color:white;}
     background-repeat:repeat-y;
 }
 /**** Black Buttons *****/
-.submit-btn,.btn{
+.submit-btn,.btn,.btn-black{
 	/*Background*/			
 	background: rgb(133,133,133); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(133,133,133,1) 0%, rgba(50,50,50,1) 3%, rgba(5,5,5,1) 100%); /* FF3.6+ */

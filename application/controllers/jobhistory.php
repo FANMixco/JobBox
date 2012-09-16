@@ -6,12 +6,12 @@ class Jobhistory extends CI_Controller {
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
-	function __construct(){parent::__construct(); $this->load->model('userModel');}	
+	function __construct(){parent::__construct(); $this->load->model('jobHistoryModel');}	
 
 	
 	public function index()
 	{
-		echo '<h1>ESTE ES EL CONTROLADOR DE USUARIOS!!</h1>';
+		echo '<h1>ESTE ES EL CONTROLADOR DE JOBS!!</h1>';
 	}
 	
 	/*--------------------------------------------------------------------------**
@@ -22,14 +22,14 @@ class Jobhistory extends CI_Controller {
 		if ($this->input->post()):
 			//load the validation library
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('startDate',$this->lang->line('lbl_start_date'),'required|valid_date');			
-			$this->form_validation->set_rules('endDate',$this->lang->line('lbl_end_date'),'valid_date');
+			$this->form_validation->set_rules('start_date',$this->lang->line('lbl_start_date'),'required|valid_date');			
+			$this->form_validation->set_rules('end_date',$this->lang->line('lbl_end_date'),'valid_date');
 			$this->form_validation->set_rules('company',$this->lang->line('lbl_company'),'required');
 			$this->form_validation->set_rules('job_area',$this->lang->line('lbl_job_area'),'required');
 			$this->form_validation->set_rules('job_sector',$this->lang->line('lbl_job_sector'),'required');
                         if ($this->form_validation->run()):
-				$this->_set_user();
-				redirect('user/registered');
+				$this->_set_jobhistory();
+				redirect('admin');
 			endif;
 		endif;	
 		//load the resources
@@ -52,16 +52,21 @@ class Jobhistory extends CI_Controller {
         
         function _set_jobhistory(){ 
             $data = array(
-                'start_date'		=> $this->input->post('start_date'),
-                'end_date'		=> $this->input->post('end_date'),
-                'country'		=> $this->input->post('country'),
-                'employee_number'		=> $this->input->post('employee_number'),
-                'salary'		=> $this->input->post('salary'),
-                'activities'		=> $this->input->post('activities'),
-                'boss'		=> $this->input->post('boss'),
-                'boss_position'		=> $this->input->post('boss_position'),
-                'address'		=> $this->input->post('address'),
-                'idUser'		=> $this->session->userdata('idUser')
+                'Start_Date'		=> $this->input->post('start_date'),
+                'End_Date'		=> $this->input->post('end_date'),
+                'idCountry'		=> $this->input->post('country'),
+                'Employee_Number'		=> $this->input->post('employee_number'),
+                'Salary'		=> $this->input->post('salary'),
+                'Activities'		=> $this->input->post('activities'),
+                'Boss'		=> $this->input->post('boss'),
+                'Boss_Position'		=> $this->input->post('boss_position'),
+                'Address'		=> $this->input->post('address'),
+                'idUser'		=> $this->session->userdata('idUser'),
+                'idJob_Area'        => $this->input->post('job_area'),
+                'idJob_Sector'        => $this->input->post('job_sector'),
+                'Start_Position'    => $this->input->post('start_position'),
+                'End_Position'    => $this->input->post('end_position'),
+                'Company'    => $this->input->post('company')
             );
             
             return $this->jobHistoryModel->registerJobHistory($data);

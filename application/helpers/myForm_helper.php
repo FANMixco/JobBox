@@ -276,6 +276,7 @@ function printList($searchText,$directory=NULL,$noRecordsMsg,$data,$indexes,$lin
 /*																				*/
 /* --------------------------------------------------------------------------	*/
 function printTable($searchText,$headers,$data,$indexes,$linkData = NULL,$divName='records',$custom = array('fields' => array(),'conditions' => array())){
+       
 	$ci =& get_instance();
 	/*Initialize the vars*/
 	$table = '';
@@ -321,10 +322,9 @@ function printTable($searchText,$headers,$data,$indexes,$linkData = NULL,$divNam
 		if ($colspan>1) $tableHeaders .= '<th colspan="'.$colspan.'">'.$linkData[3].'</th>';
 		/**********************Table-data****************************/
 		foreach ($data as $record):
-			$tableData .= '<tr>';
-
+			$tableData .= '<tr>';                        
 			foreach ($indexes as $index):
-				$tableData .= '<td class="'.$index.'">'.$record[$index].'</td>';				
+				$tableData .= '<td class="'.$index.'">'.$record[$index].'</td>';                                
 			endforeach;
 			//Write the links
 			//Edit

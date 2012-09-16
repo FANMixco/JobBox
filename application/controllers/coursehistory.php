@@ -6,7 +6,7 @@ class Coursehistory extends CI_Controller {
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
-	function __construct(){parent::__construct(); $this->load->model('userModel');}	
+	function __construct(){parent::__construct(); $this->load->model('courseHistoryModel');}	
 
 	
 	public function index()
@@ -28,7 +28,7 @@ class Coursehistory extends CI_Controller {
 			$this->form_validation->set_rules('school',$this->lang->line('lbl_school'),'required');
 			$this->form_validation->set_rules('country',$this->lang->line('lbl_country'),'required');
                         if ($this->form_validation->run()):
-				$this->_set_user();
+				$this->_set_coursehistory();
 				redirect('user/registered');
 			endif;
 		endif;	
@@ -40,7 +40,7 @@ class Coursehistory extends CI_Controller {
 			'title'		=> $this->lang->line('txt_register'),
 			'mainView'	=> 'forms/history/course_history/add',
 			'schools'	=> getDropDown($this->schoolModel->getSchools(),'idSchool','School'),
-			'academic_levels'	=> getDropDown($this->countryModel->getAcademicLevels(),'idCountry','Country'),
+			'countries'	=> getDropDown($this->countryModel->getCountries(),'idCountry','Country'),
 			'scripts'	=> jQuery_UI()			
 		);
 		$this->load->view('template/wrapper',$data);

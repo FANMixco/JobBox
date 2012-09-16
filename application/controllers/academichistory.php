@@ -6,7 +6,7 @@ class Academichistory extends CI_Controller {
 	/*  __construct ==> Call the Model constructor 								*/
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
-	function __construct(){parent::__construct(); $this->load->model('userModel');}	
+	function __construct(){parent::__construct(); $this->load->model('academicHistoryModel');}	
 
 	
 	public function index()
@@ -22,14 +22,14 @@ class Academichistory extends CI_Controller {
 		if ($this->input->post()):
 			//load the validation library
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('startDate',$this->lang->line('lbl_start_date'),'required|valid_date');			
-			$this->form_validation->set_rules('endDate',$this->lang->line('lbl_end_date'),'valid_date');
+			$this->form_validation->set_rules('start_date',$this->lang->line('lbl_start_date'),'required|valid_date');			
+			$this->form_validation->set_rules('end_date',$this->lang->line('lbl_end_date'),'valid_date');
 			$this->form_validation->set_rules('school',$this->lang->line('lbl_school'),'required');
-			$this->form_validation->set_rules('academicLevel',$this->lang->line('lbl_academic_level'),'required');
-			$this->form_validation->set_rules('academicMajor',$this->lang->line('lbl_academic_major'),'required');
+			$this->form_validation->set_rules('academic_level',$this->lang->line('lbl_academic_level'),'required');
+			$this->form_validation->set_rules('academic_major',$this->lang->line('lbl_academic_major'),'required');
                         if ($this->form_validation->run()):
-				$this->_set_user();
-				redirect('user/registered');
+				$this->_set_academichistory();
+				redirect('admin');
 			endif;
 		endif;	
 		//load the resources
@@ -51,14 +51,14 @@ class Academichistory extends CI_Controller {
         
         function _set_academichistory(){ 
             $data = array(
-                'start_date'		=> $this->input->post('start_date'),
-                'end_date'		=> $this->input->post('end_date'),
-                'school'		=> $this->input->post('school'),
-                'academic_level'		=> $this->input->post('academic_level'),
-                'academic_major'		=> $this->input->post('academic_major'),
-                'speciality'		=> $this->input->post('speciality'),
-                'completed_years'		=> $this->input->post('completed_years'),
-                'title_years'		=> $this->input->post('title_years'),
+                'Start_Date'		=> changeDateFormat($this->input->post('start_date')),
+                'End_Date'		=> changeDateFormat($this->input->post('end_date')),
+                'idSchool'		=> $this->input->post('school'),
+                'idAcademic_Level'		=> $this->input->post('academic_level'),
+                'idAcademic_Major'		=> $this->input->post('academic_major'),
+                'Specialty'		=> $this->input->post('specialty'),
+                'Completed_Years'		=> $this->input->post('completed_years'),
+                'Title_Years'		=> $this->input->post('title_years'),
                 'idUser'		=> $this->session->userdata('idUser')
             );
             

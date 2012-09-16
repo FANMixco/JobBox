@@ -22,9 +22,11 @@
     			<!-- Data -->
     			<tbody class="list">
 <?php foreach($apps as $app): ?>
+        <tr>
 	<td><?php echo $app['Name']; ?></td>
 	<td><?php echo $app['App_Date']; ?></td>
 	<td><?php echo anchor(base_url('applications/check/').'/'.encodeID($app['idJob']).'/'.encodeID($app['idUser']),$this->lang->line('txt_view'),array('class' => 'icon view')); ?></td>
+        </tr>
 <?php endforeach; ?>
 </tbody>
     		</table>

@@ -4,7 +4,7 @@ function jQuery_UI(){
 	$jUI ='
 	<!-- jQuery-UI -->
 	<script type="text/javascript" src="'.base_url('scripts/jQuery-UI/js/jquery-ui-1.8.23.custom.min.js').'"></script>
-	<link rel="stylesheet" href="'.base_url('scripts/jQuery-UI/css/ui-darkness/jquery-ui-1.8.23.custom.css').'" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="'.base_url('scripts/jQuery-UI/css/smoothness/jquery-ui-1.8.23.custom.css').'" type="text/css" media="screen" charset="utf-8">
 	';
 	return $jUI;
 }

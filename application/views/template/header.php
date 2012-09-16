@@ -69,7 +69,7 @@
 <ul id="nav">	
 	<li><?php echo anchor(base_url(),$this->lang->line('menu_job_bag')); ?></li>
 	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_register')); ?></li>
-	<li><?php echo anchor(base_url('user/register'),$this->lang->line('menu_search_job')); ?></li>
+	<li><?php echo anchor(base_url(''),$this->lang->line('menu_search_job')); ?></li>
 	<br />
 	<?php if ($this->session->userdata(Level)==1):?>
 		<li>Administrar</li><hr />

@@ -38,7 +38,7 @@
         <td>
             <?php echo form_label($this->lang->line('lbl_speciality')); ?>
         </td>
-        <td><?php echo form_input('speciality',$this->input->post('speciality')); ?></td>
+        <td><?php echo form_input('specialty',$this->input->post('specialty')); ?></td>
     </tr>
     <tr>
         <td>

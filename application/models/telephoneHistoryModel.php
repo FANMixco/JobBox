@@ -19,7 +19,7 @@ class TelephoneHistoryModel extends CI_Model{
 	/*																			*/
 	/*--------------------------------------------------------------------------*/
 	function getTelephoneHistoryModel($user){
-		return $this->db->get_where('telephone_history_vw',array(idUser => $user,status => 1))->row_array();
+		return $this->db->get_where('telephone_history_vw',array(idUser => $user))->result_array();
 	}
 
 	/*--------------------------------------------------------------------------*/

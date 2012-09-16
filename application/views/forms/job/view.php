@@ -32,7 +32,7 @@
 	if ($this->session->userdata(Level)!=1):
 		echo ($this->jobModel->hasApplied($this->session->userdata(idUser),$job['idJob'])==0)?
 			anchor('job/apply/'.encodeID($job['idJob']),$this->lang->line('txt_apply'), array('class' => 'btn right')): 
-			anchor('javascript:void(0)',$this->lang->line('txt_app_sent'), array('class' => 'btn right'));
+			'<a href="javascript:void(0)" class="btn right">'.$this->lang->line('txt_app_sent').'</a>';
 	else:
 		echo anchor('job/edit',$this->lang->line('txt_edit'), array('class' => 'btn right'));
 	endif;

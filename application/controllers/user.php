@@ -74,12 +74,28 @@ class User extends CI_Controller {
 	public function profile($profile){
 		$this->load->helper('js');
 		$this->load->model('jobModel');
+                $idUser = decodeID($profile);
+                $this->load->model('academicHistoryModel');
+                                $this->load->model('courseHistoryModel');
+                                $this->load->model('jobHistoryModel');
+                                $this->load->model('emailHistoryModel'); 
+                                $this->load->model('telephoneHistoryModel'); 
+                                $this->load->model('addressHistoryModel'); 
+                                $this->load->model('contactModel');  
 		$data = array(
 			'title'		=>	$this->lang->line('txt_my_profile'),
 			'mainView'	=> 	'forms/profile',
-			'scripts'	=>  jQuery_UI(),
+			'scripts'	=>  jQuery_UI().jlist(),
 			'user'		=>  $this->userModel->getUser(decodeID($profile)),
-			'jobs'		=> 	getDropDown($this->jobModel->getRecentJobs(),'idJob','Position_Name')
+			'jobs'		=> 	getDropDown($this->jobModel->getRecentJobs(),'idJob','Position_Name'),
+                        'acHistory'     =>  $this->academicHistoryModel->getAcademicHistoryModel($idUser),
+                                        //'acHistory'     =>  $this->academicHistoryModel->getAcademicHistoryModel($this->session->userdata(idUser)),
+                                        'jHistory'     =>  $this->jobHistoryModel->getJobHistoryModel($idUser),
+                                        'emailHistory'     =>  $this->emailHistoryModel->getEmailcHistoryModel($idUser),
+                                        'telHistory'    => $this->telephoneHistoryModel->getTelephoneHistoryModel($idUser),
+                                        'addHistory'    => $this->addressHistoryModel->getAddressHistoryModel($idUser),
+                                        'contactHistory'    => $this->contactModel->getContactHistoryModel($idUser),
+                                        'courseHistory'    => $this->courseHistoryModel->getCourseHistoryModel($idUser)
 		);
 		$this->load->view('template/wrapper',$data);
 	}
